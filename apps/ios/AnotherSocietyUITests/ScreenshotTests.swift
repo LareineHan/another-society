@@ -64,16 +64,21 @@ final class ScreenshotTests: XCTestCase {
         shot("06-bag")
         app.swipeDown(velocity: .fast)
         sleep(1)
+        let wander = app.buttons["Wander"]
+        for _ in 0..<3 where !wander.isHittable { app.swipeDown(velocity: .fast); sleep(1) }
 
-        app.buttons["Wander"].tap()
-        let firstHome = app.collectionViews.buttons.firstMatch
-        if firstHome.waitForExistence(timeout: 10) {
+        wander.tap()
+        let row = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'quiet home' OR label CONTAINS[c] 'someone staying'")).firstMatch
+        if row.waitForExistence(timeout: 15) {
+            sleep(1)
             shot("07-wander")
-            firstHome.tap()
+            row.tap()
             if app.buttons["Leave a gift"].waitForExistence(timeout: 30) {
                 sleep(2)
                 shot("08-visiting")
             }
+        } else {
+            shot("07-wander-empty")
         }
     }
 }
