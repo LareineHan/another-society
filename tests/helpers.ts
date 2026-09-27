@@ -47,6 +47,7 @@ export async function setupTestWorld(opts: { poolSize?: number } = {}): Promise<
   await admin.query(`CREATE DATABASE ${dbName} TEMPLATE as_test_template`);
   await admin.end();
   const pool = new pg.Pool({ connectionString: `${PG_BASE}/${dbName}`, max: opts.poolSize ?? 20 });
+  pool.on('error', () => {}); // idle clients are terminated when the test DB is dropped
   const db = createDb(pool);
   const logs: Record<string, unknown>[] = [];
   const revoked: string[] = [];
@@ -95,17 +96,25 @@ export async function setupTestWorld(opts: { poolSize?: number } = {}): Promise<
   };
 
   const claimHome: TestWorld['claimHome'] = async (r, plotId) => {
-    let pid = plotId;
-    if (!pid) {
-      const plots = await call(r, 'GET', `/v1/onboarding/plots?city_id=${city.id}`);
-      pid = plots.body.plots.find((p: { status: string }) => p.status === 'vacant')?.id;
-      if (!pid) throw new Error('no vacant plot');
+    // Concurrent newcomers may pick the same plot; like a real client, pick another on plot_unavailable.
+    for (let attempt = 0; attempt < 20; attempt++) {
+      let pid = plotId;
+      if (!pid) {
+        const plots = (await call(r, 'GET', `/v1/onboarding/plots?city_id=${city.id}`)).body.plots.filter((p: { status: string; reserved_by_me: boolean }) => p.status === 'vacant' && !p.reserved_by_me);
+        if (!plots.length) {
+          await new Promise((res) => setTimeout(res, 50));
+          continue;
+        }
+        pid = plots[Math.floor(Math.random() * plots.length)].id;
+      }
+      const res = await call(r, 'POST', `/v1/plots/${pid}/reserve`, undefined, { idem: true });
+      if (res.status === 409 && res.body.code === 'plot_unavailable' && !plotId) continue;
+      expect(res.status, JSON.stringify(res.body)).toBe(201);
+      const claim = await call(r, 'POST', `/v1/plots/${pid}/claim`, { reservation_id: res.body.reservation_id, structure_asset_id: 'structure.home.cottage.a' }, { idem: true });
+      expect(claim.status, JSON.stringify(claim.body)).toBe(201);
+      return { propertyId: claim.body.property.id, spaceId: claim.body.property.space_ids[0], plotId: pid! };
     }
-    const res = await call(r, 'POST', `/v1/plots/${pid}/reserve`, undefined, { idem: true });
-    expect(res.status, JSON.stringify(res.body)).toBe(201);
-    const claim = await call(r, 'POST', `/v1/plots/${pid}/claim`, { reservation_id: res.body.reservation_id, structure_asset_id: 'structure.home.cottage.a' }, { idem: true });
-    expect(claim.status, JSON.stringify(claim.body)).toBe(201);
-    return { propertyId: claim.body.property.id, spaceId: claim.body.property.space_ids[0], plotId: pid! };
+    throw new Error('could not claim a plot after 20 attempts');
   };
 
   return {

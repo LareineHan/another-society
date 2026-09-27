@@ -202,7 +202,8 @@ export function worldRoutes() {
     const actor = c.get('actor');
     const rid = residentOf(actor);
     await rateLimit(c, 'plot', `user:${actor.userId}`);
-    return idempotent(c, 'plot.reserve', async (tx) => {
+    let reservedCity: string | undefined;
+    const res = await idempotent(c, 'plot.reserve', async (tx) => {
       const resident = await one<{ onboarding_state: string }>(tx, sql`SELECT onboarding_state FROM residents WHERE id = ${rid} FOR UPDATE`);
       const home = await maybeOne(tx, sql`SELECT 1 AS x FROM properties WHERE owner_resident_id = ${rid} AND is_primary_home AND status <> 'archived'`);
       if (home || resident.onboarding_state !== 'choosing_plot') throw new DomainError('already_has_home', 'You already have a home.');
@@ -235,14 +236,18 @@ export function worldRoutes() {
         INSERT INTO plot_reservations (plot_id, user_id, expires_at)
         VALUES (${plotId}, ${actor.userId}, now() + make_interval(secs => ${RESERVATION_TTL_SECONDS}))
         RETURNING id, expires_at`);
-      const updated = await one<{ revision: number }>(tx, sql`
-        UPDATE plots SET status = 'reserved', revision = revision + 1 WHERE id = ${plotId} RETURNING revision`);
+      const updated = await one<{ revision: number; city_id: string }>(tx, sql`
+        UPDATE plots SET status = 'reserved', revision = revision + 1 WHERE id = ${plotId} RETURNING revision, city_id`);
+      reservedCity = updated.city_id;
       return {
         status: 201,
         body: { request_id: c.get('requestId'), resource_id: r.id, reservation_id: r.id, expires_at: new Date(r.expires_at).toISOString(), revision: updated.revision },
         resourceId: r.id,
       };
     });
+    // Reservations also reduce active vacancy; a burst of newcomers should still see real choice.
+    if (reservedCity) await activateBestEffort(c, reservedCity);
+    return res;
   });
 
   /**
@@ -310,13 +315,7 @@ export function worldRoutes() {
       };
     });
     // Post-commit, best effort: keep enough vacant plots active. The jobs worker also reacts to plot.claimed.
-    if (cityId && res.status === 201 && !res.headers.get('Idempotent-Replayed')) {
-      try {
-        await maybeActivateCity(await c.get('getDb')(), cityId);
-      } catch (e) {
-        c.get('deps').log({ request_id: c.get('requestId'), level: 'warn', msg: 'activation check failed', error: String(e) });
-      }
-    }
+    if (cityId) await activateBestEffort(c, cityId);
     return res;
   });
 
@@ -352,6 +351,14 @@ export function worldRoutes() {
   });
 
   return app;
+}
+
+async function activateBestEffort(c: Ctx, cityId: string) {
+  try {
+    await maybeActivateCity(await c.get('getDb')(), cityId);
+  } catch (e) {
+    c.get('deps').log({ request_id: c.get('requestId'), level: 'warn', msg: 'activation check failed', error: String(e) });
+  }
 }
 
 function assertStructureFits(
