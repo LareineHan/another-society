@@ -98,3 +98,9 @@ export default {
     return cached.app.fetch(request, env, ctx);
   },
 } satisfies ExportedHandler<Env>;
+
+// Shared with the jobs Worker.
+export { postLedger, systemWalletId, residentWalletId } from './services/ledger';
+export { decryptToken, encryptToken } from './auth/cipher';
+export { lockPresence, endStays, isBlockedEitherWay } from './services/social';
+export { createAdminApp, cloudflareAccessVerifier, type AdminVerifier } from './admin/app';
