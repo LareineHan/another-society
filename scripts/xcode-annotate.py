@@ -10,6 +10,8 @@ bare = re.compile(r"^(?:error|fatal error): (.+)$")
 by_file: "OrderedDict[str, list]" = OrderedDict()
 loose = []
 seen = set()
+summaries = []
+skipped = []
 for raw in sys.stdin:
     sys.stdout.write(raw)
     line = raw.rstrip("\n")
@@ -23,6 +25,10 @@ for raw in sys.stdin:
         seen.add(key)
         by_file.setdefault(rel, []).append((int(ln), int(col), msg))
         continue
+    if re.search(r"Executed \d+ tests?, with \d+ failures?", line) and line not in summaries:
+        summaries.append(line.strip())
+    if " skipped" in line and ("Test Case" in line or "Test case" in line):
+        skipped.append(line.strip())
     b = bare.match(line.strip())
     if b and b.group(1) not in loose:
         loose.append(b.group(1))
@@ -40,3 +46,7 @@ if len(files) > 8:
     print(f"::error title=more files::{esc(rest)}")
 if loose:
     print(f"::error title=other errors::{esc(chr(10).join(loose[:30]))}")
+if summaries:
+    print(f"::notice title=test summary::{esc(chr(10).join(summaries[-4:]))}")
+if skipped:
+    print(f"::warning title=skipped tests::{esc(chr(10).join(skipped[:20]))}")

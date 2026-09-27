@@ -11,8 +11,15 @@ final class AppFlowTests: XCTestCase {
     let base = URL(string: ProcessInfo.processInfo.environment["AS_TEST_API"] ?? "http://127.0.0.1:8787")!
 
     override func setUp() async throws {
-        let (_, response) = try await URLSession.shared.data(from: base.appendingPathComponent("/health"))
-        try XCTSkipUnless((response as? HTTPURLResponse)?.statusCode == 200, "API not running at \(base)")
+        let reachable = await (try? URLSession.shared.data(from: base.appendingPathComponent("/health")))
+            .map { ($0.1 as? HTTPURLResponse)?.statusCode == 200 } ?? false
+        // CI sets TEST_RUNNER_AS_REQUIRE_API=1 so a missing API fails loudly instead of skipping.
+        if ProcessInfo.processInfo.environment["AS_REQUIRE_API"] == "1" {
+            XCTAssertTrue(reachable, "API not running at \(base)")
+            if !reachable { throw XCTSkip("unreachable") }
+        } else {
+            try XCTSkipUnless(reachable, "API not running at \(base); start it with `pnpm dev:server`")
+        }
     }
 
     private func newResident(_ name: String) async throws -> AppModel {
