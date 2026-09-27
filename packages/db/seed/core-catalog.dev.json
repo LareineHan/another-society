@@ -1,0 +1,204 @@
+{
+  "_note": "DEV_PLACEHOLDER catalog: definition keys are stable; prices are open product values (Blueprint Part XX).",
+  "currency_code": "WORLD",
+  "items": [
+    {
+      "definition_key": "furniture.bed.simple.001",
+      "category": "bed",
+      "kind": "furniture",
+      "unit_price": 120,
+      "gift_eligible": false,
+      "asset_id": "furniture.bed.simple.001",
+      "starter_kit": true
+    },
+    {
+      "definition_key": "furniture.chair.softwood.001",
+      "category": "chair",
+      "kind": "furniture",
+      "unit_price": 40,
+      "gift_eligible": false,
+      "asset_id": "furniture.chair.softwood.001",
+      "starter_kit": true
+    },
+    {
+      "definition_key": "furniture.table.round.001",
+      "category": "table",
+      "kind": "furniture",
+      "unit_price": 60,
+      "gift_eligible": false,
+      "asset_id": "furniture.table.round.001",
+      "starter_kit": true
+    },
+    {
+      "definition_key": "decor.lamp.paper.001",
+      "category": "lamp",
+      "kind": "decor",
+      "unit_price": 30,
+      "gift_eligible": false,
+      "asset_id": "decor.lamp.paper.001",
+      "starter_kit": true
+    },
+    {
+      "definition_key": "furniture.sofa.small.001",
+      "category": "sofa",
+      "kind": "furniture",
+      "unit_price": 140,
+      "gift_eligible": false,
+      "asset_id": "furniture.sofa.small.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "furniture.shelf.low.001",
+      "category": "shelf",
+      "kind": "furniture",
+      "unit_price": 70,
+      "gift_eligible": false,
+      "asset_id": "furniture.shelf.low.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "furniture.desk.writing.001",
+      "category": "desk",
+      "kind": "furniture",
+      "unit_price": 90,
+      "gift_eligible": false,
+      "asset_id": "furniture.desk.writing.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "decor.rug.woven.001",
+      "category": "rug",
+      "kind": "decor",
+      "unit_price": 50,
+      "gift_eligible": false,
+      "asset_id": "decor.rug.woven.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "furniture.bench.garden.001",
+      "category": "bench",
+      "kind": "furniture",
+      "unit_price": 60,
+      "gift_eligible": false,
+      "asset_id": "furniture.bench.garden.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "decor.clock.wall.001",
+      "category": "clock",
+      "kind": "decor",
+      "unit_price": 28,
+      "gift_eligible": false,
+      "asset_id": "decor.clock.wall.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "plant.monstera.001",
+      "category": "plant",
+      "kind": "plant",
+      "unit_price": 35,
+      "gift_eligible": false,
+      "asset_id": "plant.monstera.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "decor.stove.wood.001",
+      "category": "stove",
+      "kind": "decor",
+      "unit_price": 110,
+      "gift_eligible": false,
+      "asset_id": "decor.stove.wood.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.flower.vase.001",
+      "category": "flower",
+      "kind": "gift",
+      "unit_price": 15,
+      "gift_eligible": true,
+      "asset_id": "gift.flower.vase.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.teacup.001",
+      "category": "tableware",
+      "kind": "gift",
+      "unit_price": 10,
+      "gift_eligible": true,
+      "asset_id": "gift.teacup.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.candle.001",
+      "category": "light",
+      "kind": "gift",
+      "unit_price": 12,
+      "gift_eligible": true,
+      "asset_id": "gift.candle.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.book.stack.001",
+      "category": "book",
+      "kind": "gift",
+      "unit_price": 14,
+      "gift_eligible": true,
+      "asset_id": "gift.book.stack.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.fern.potted.001",
+      "category": "plant",
+      "kind": "gift",
+      "unit_price": 18,
+      "gift_eligible": true,
+      "asset_id": "gift.fern.potted.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.cushion.001",
+      "category": "textile",
+      "kind": "gift",
+      "unit_price": 16,
+      "gift_eligible": true,
+      "asset_id": "gift.cushion.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.lantern.small.001",
+      "category": "light",
+      "kind": "gift",
+      "unit_price": 20,
+      "gift_eligible": true,
+      "asset_id": "gift.lantern.small.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.music-box.001",
+      "category": "keepsake",
+      "kind": "gift",
+      "unit_price": 25,
+      "gift_eligible": true,
+      "asset_id": "gift.music-box.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.pebble.smooth.001",
+      "category": "keepsake",
+      "kind": "gift",
+      "unit_price": 8,
+      "gift_eligible": true,
+      "asset_id": "gift.pebble.smooth.001",
+      "starter_kit": false
+    },
+    {
+      "definition_key": "gift.snow-globe.001",
+      "category": "keepsake",
+      "kind": "gift",
+      "unit_price": 22,
+      "gift_eligible": true,
+      "asset_id": "gift.snow-globe.001",
+      "starter_kit": false
+    }
+  ]
+}

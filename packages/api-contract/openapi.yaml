@@ -1,0 +1,1354 @@
+openapi: 3.1.0
+info:
+  title: Another Society API
+  version: 0.3.0
+  description: 'Foundation API contract for the Another Society v0.3 architecture. The server is authoritative for
+    identity, ownership, land, inventory, economy, canonical layouts, stays, and gifts.
+
+
+    Ordinary Visit is not globally live presence; choosing Stay commits public foreign presence. WORLD soft currency
+    is server-issued/earned and not directly funded by real-money purchases in the initial business model.
+
+    '
+servers:
+- url: https://api.example.com/v1
+  description: Production placeholder; replace during deployment.
+tags:
+- name: Auth
+- name: Account
+- name: Resident
+- name: World
+- name: Property
+- name: Social
+- name: Economy
+paths:
+  /auth/apple:
+    post:
+      tags:
+      - Auth
+      security: []
+      operationId: signInWithApple
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppleAuthRequest'
+      responses:
+        '200':
+          description: Authenticated existing account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '201':
+          description: Created a new account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/refresh:
+    post:
+      tags:
+      - Auth
+      security: []
+      operationId: refreshSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - refresh_token
+              properties:
+                refresh_token:
+                  type: string
+                  minLength: 32
+      responses:
+        '200':
+          description: Session refreshed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/logout:
+    post:
+      tags:
+      - Auth
+      operationId: logout
+      responses:
+        '204':
+          description: Session revoked.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /me:
+    get:
+      tags:
+      - Account
+      operationId: getMe
+      responses:
+        '200':
+          description: Current account and resident summary.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /account:
+    delete:
+      tags:
+      - Account
+      operationId: requestAccountDeletion
+      parameters:
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '202':
+          description: Deletion requested; account removed from public discovery immediately.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MutationResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /resident:
+    get:
+      tags:
+      - Resident
+      operationId: getResident
+      responses:
+        '200':
+          description: Current resident profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resident'
+    patch:
+      tags:
+      - Resident
+      operationId: updateResident
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                display_name:
+                  type: string
+                  minLength: 1
+                  maxLength: 64
+      responses:
+        '200':
+          description: Updated resident.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resident'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /resident/mini:
+    put:
+      tags:
+      - Resident
+      operationId: updateMini
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - definition
+              properties:
+                definition:
+                  type: object
+                  additionalProperties: true
+      responses:
+        '200':
+          description: Updated Mini definition.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resident'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /world/bootstrap:
+    get:
+      tags:
+      - World
+      operationId: getWorldBootstrap
+      responses:
+        '200':
+          description: World, founding-city, feature flag, and asset-pack bootstrap data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorldBootstrap'
+  /cities/{cityId}/chunks:
+    get:
+      tags:
+      - World
+      operationId: getCityChunks
+      parameters:
+      - $ref: '#/components/parameters/CityId'
+      - in: query
+        name: minX
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: minY
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: maxX
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: maxY
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Dynamic state for requested chunk window only.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - chunks
+                properties:
+                  chunks:
+                    type: array
+                    maxItems: 100
+                    items:
+                      $ref: '#/components/schemas/ChunkSummary'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /onboarding/plots:
+    get:
+      tags:
+      - World
+      operationId: getClaimablePlots
+      parameters:
+      - in: query
+        name: city_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: All currently active claimable plots in the onboarding city scope.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - plots
+                properties:
+                  plots:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PlotSummary'
+  /plots/{plotId}/reserve:
+    post:
+      tags:
+      - World
+      operationId: reservePlot
+      parameters:
+      - $ref: '#/components/parameters/PlotId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Short-lived reservation created.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MutationResponse'
+                - type: object
+                  properties:
+                    reservation_id:
+                      type: string
+                      format: uuid
+                    expires_at:
+                      type: string
+                      format: date-time
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /plots/{plotId}/claim:
+    post:
+      tags:
+      - World
+      operationId: claimPlot
+      parameters:
+      - $ref: '#/components/parameters/PlotId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reservation_id
+              - structure_asset_id
+              properties:
+                reservation_id:
+                  type: string
+                  format: uuid
+                structure_asset_id:
+                  type: string
+                structure_x_u:
+                  type: integer
+                  default: 0
+                structure_y_u:
+                  type: integer
+                  default: 0
+                structure_rot_q:
+                  type: integer
+                  minimum: 0
+                  maximum: 3
+      responses:
+        '201':
+          description: Plot claimed and starter property created atomically.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MutationResponse'
+                - type: object
+                  properties:
+                    property:
+                      $ref: '#/components/schemas/Property'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /properties/{propertyId}:
+    get:
+      tags:
+      - Property
+      operationId: getProperty
+      parameters:
+      - $ref: '#/components/parameters/PropertyId'
+      responses:
+        '200':
+          description: Public/owner-authorized property state.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /properties/{propertyId}/access:
+    patch:
+      tags:
+      - Property
+      operationId: updatePropertyAccess
+      parameters:
+      - $ref: '#/components/parameters/PropertyId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                access_mode:
+                  type: string
+                  enum:
+                  - open
+                  - closed
+                allow_stays:
+                  type: boolean
+                stay_capacity:
+                  type: integer
+                  minimum: 0
+                  maximum: 20
+                expected_revision:
+                  type: integer
+                  format: int64
+                away_access_mode:
+                  type: string
+                  enum:
+                  - open
+                  - closed
+      responses:
+        '200':
+          description: Access policy updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /spaces/{spaceId}:
+    get:
+      tags:
+      - Property
+      operationId: getSpace
+      parameters:
+      - $ref: '#/components/parameters/SpaceId'
+      responses:
+        '200':
+          description: Space and canonical placements.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Space'
+  /spaces/{spaceId}/layout:
+    put:
+      tags:
+      - Property
+      operationId: replaceSpaceLayout
+      parameters:
+      - $ref: '#/components/parameters/SpaceId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - expected_revision
+              - placements
+              properties:
+                expected_revision:
+                  type: integer
+                  format: int64
+                placements:
+                  type: array
+                  maxItems: 500
+                  items:
+                    $ref: '#/components/schemas/PlacementInput'
+      responses:
+        '200':
+          description: Canonical layout saved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Space'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /properties/{propertyId}/visit:
+    post:
+      tags:
+      - Social
+      operationId: visitProperty
+      parameters:
+      - $ref: '#/components/parameters/PropertyId'
+      responses:
+        '200':
+          description: Visit authorized. Owner never receives visitor identity from ordinary visit history.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - request_id
+                - property
+                - spaces
+                properties:
+                  request_id:
+                    type: string
+                  property:
+                    $ref: '#/components/schemas/Property'
+                  spaces:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Space'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /spaces/{spaceId}/stay:
+    post:
+      tags:
+      - Social
+      operationId: startStay
+      parameters:
+      - $ref: '#/components/parameters/SpaceId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '201':
+          description: Persistent asynchronous Stay started.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MutationResponse'
+                - type: object
+                  properties:
+                    stay_id:
+                      type: string
+                      format: uuid
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /stay:
+    delete:
+      tags:
+      - Social
+      operationId: endStay
+      parameters:
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Current active Stay ended.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MutationResponse'
+  /gifts:
+    post:
+      tags:
+      - Social
+      operationId: leaveGift
+      parameters:
+      - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - property_id
+              - space_id
+              - item_instance_id
+              - drop_x_u
+              - drop_y_u
+              properties:
+                property_id:
+                  type: string
+                  format: uuid
+                space_id:
+                  type: string
+                  format: uuid
+                item_instance_id:
+                  type: string
+                  format: uuid
+                drop_x_u:
+                  type: integer
+                drop_y_u:
+                  type: integer
+      responses:
+        '201':
+          description: Gift ownership transferred atomically and awaits recipient placement decision.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gift'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /blocks:
+    post:
+      tags:
+      - Social
+      operationId: blockResident
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - resident_id
+              properties:
+                resident_id:
+                  type: string
+                  format: uuid
+      responses:
+        '204':
+          description: Resident blocked; prohibited active interactions are terminated.
+  /blocks/{residentId}:
+    delete:
+      tags:
+      - Social
+      operationId: unblockResident
+      parameters:
+      - $ref: '#/components/parameters/ResidentId'
+      responses:
+        '204':
+          description: Resident unblocked.
+  /reports:
+    post:
+      tags:
+      - Social
+      operationId: reportContent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - target_type
+              - target_id
+              - reason_code
+              properties:
+                target_type:
+                  type: string
+                  enum:
+                  - resident
+                  - property
+                  - item
+                target_id:
+                  type: string
+                  format: uuid
+                reason_code:
+                  type: string
+                  maxLength: 64
+                details:
+                  type: string
+                  maxLength: 2000
+      responses:
+        '201':
+          description: Report accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MutationResponse'
+  /inventory:
+    get:
+      tags:
+      - Economy
+      operationId: getInventory
+      responses:
+        '200':
+          description: Current canonical inventory.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ItemInstance'
+  /wallet:
+    get:
+      tags:
+      - Economy
+      operationId: getWallet
+      responses:
+        '200':
+          description: Current materialized balance and currency code.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wallet'
+  /catalog:
+    get:
+      tags:
+      - Economy
+      operationId: getCatalog
+      parameters:
+      - in: query
+        name: city_id
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Active system/city listings.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  listings:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/StoreListing'
+  /store/purchases:
+    post:
+      tags:
+      - Economy
+      operationId: purchaseStoreListing
+      parameters:
+      - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - listing_id
+              - quantity
+              properties:
+                listing_id:
+                  type: string
+                  format: uuid
+                quantity:
+                  type: integer
+                  minimum: 1
+                  maximum: 20
+      responses:
+        '201':
+          description: Purchase posted atomically. Server decides canonical price/balance.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - request_id
+                - transaction_id
+                - wallet
+                - items
+                properties:
+                  request_id:
+                    type: string
+                  transaction_id:
+                    type: string
+                    format: uuid
+                  wallet:
+                    $ref: '#/components/schemas/Wallet'
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ItemInstance'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /spaces/{spaceId}/stays/{residentId}:
+    delete:
+      tags:
+      - Social
+      operationId: sendStayerHome
+      description: Property owner ends a resident active Stay in this space. This is a safety/control action and
+        sends no message.
+      parameters:
+      - $ref: '#/components/parameters/SpaceId'
+      - $ref: '#/components/parameters/ResidentId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: Stay ended and resident durable presence returned to primary home.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MutationResponse'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /gifts/inbox:
+    get:
+      tags:
+      - Social
+      operationId: listGiftInbox
+      parameters:
+      - name: status
+        in: query
+        schema:
+          type: string
+          enum:
+          - pending_placement
+          - kept_here
+          - put_away
+          - declined
+          default: pending_placement
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 50
+      responses:
+        '200':
+          description: Gifts addressed to the authenticated resident.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Gift'
+  /gifts/{giftId}/resolve:
+    post:
+      tags:
+      - Social
+      operationId: resolveGift
+      parameters:
+      - $ref: '#/components/parameters/GiftId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - action
+              properties:
+                action:
+                  type: string
+                  enum:
+                  - keep_here
+                  - put_away
+                  - decline
+      responses:
+        '200':
+          description: Gift resolved atomically. Decline returns the item to giver inventory when possible.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gift'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    IdempotencyKey:
+      in: header
+      name: Idempotency-Key
+      required: true
+      schema:
+        type: string
+        minLength: 16
+        maxLength: 128
+    CityId:
+      in: path
+      name: cityId
+      required: true
+      schema:
+        type: string
+        format: uuid
+    PlotId:
+      in: path
+      name: plotId
+      required: true
+      schema:
+        type: string
+        format: uuid
+    PropertyId:
+      in: path
+      name: propertyId
+      required: true
+      schema:
+        type: string
+        format: uuid
+    SpaceId:
+      in: path
+      name: spaceId
+      required: true
+      schema:
+        type: string
+        format: uuid
+    ResidentId:
+      in: path
+      name: residentId
+      required: true
+      schema:
+        type: string
+        format: uuid
+    GiftId:
+      name: giftId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    Unauthorized:
+      description: Authentication required or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Forbidden:
+      description: Authenticated but operation is not allowed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Resource not found or intentionally hidden.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Conflict:
+      description: State conflict, duplicate/race, stale revision, or idempotency mismatch.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ValidationError:
+      description: Request failed validation/business rules.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    AppleAuthRequest:
+      type: object
+      required:
+      - identity_token
+      - authorization_code
+      - nonce
+      properties:
+        identity_token:
+          type: string
+        authorization_code:
+          type: string
+        nonce:
+          type: string
+        device_label:
+          type: string
+          maxLength: 120
+    AuthResponse:
+      type: object
+      required:
+      - access_token
+      - refresh_token
+      - expires_in
+      - user_id
+      - is_new_account
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+        expires_in:
+          type: integer
+          minimum: 1
+        user_id:
+          type: string
+          format: uuid
+        is_new_account:
+          type: boolean
+    MeResponse:
+      type: object
+      required:
+      - user_id
+      - account_status
+      properties:
+        user_id:
+          type: string
+          format: uuid
+        account_status:
+          type: string
+          enum:
+          - active
+          - suspended
+          - deleting
+          - deleted
+        resident:
+          $ref: '#/components/schemas/Resident'
+    Resident:
+      type: object
+      required:
+      - id
+      - display_name
+      - public_tag
+      - mini_definition
+      - onboarding_state
+      properties:
+        id:
+          type: string
+          format: uuid
+        display_name:
+          type: string
+        public_tag:
+          type: string
+        mini_definition:
+          type: object
+          additionalProperties: true
+        onboarding_state:
+          type: string
+          enum:
+          - choosing_plot
+          - claimed
+          - complete
+    WorldBootstrap:
+      type: object
+      required:
+      - world_id
+      - rules_version
+      - cities
+      - asset_packs
+      - features
+      properties:
+        world_id:
+          type: string
+          format: uuid
+        rules_version:
+          type: integer
+        cities:
+          type: array
+          items:
+            type: object
+            required:
+            - id
+            - display_name
+            - status
+            properties:
+              id:
+                type: string
+                format: uuid
+              display_name:
+                type: string
+              status:
+                type: string
+        asset_packs:
+          type: array
+          items:
+            type: object
+            properties:
+              pack_id:
+                type: string
+              version:
+                type: integer
+              manifest_url:
+                type: string
+                format: uri
+              sha256:
+                type: string
+        features:
+          type: object
+          additionalProperties: true
+    ChunkSummary:
+      type: object
+      required:
+      - id
+      - x
+      - y
+      - revision
+      - plots
+      - properties
+      properties:
+        id:
+          type: string
+          format: uuid
+        x:
+          type: integer
+        y:
+          type: integer
+        revision:
+          type: integer
+          format: int64
+        plots:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlotSummary'
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/PropertyPreview'
+    PlotSummary:
+      type: object
+      required:
+      - id
+      - status
+      - center_x_u
+      - center_y_u
+      - terrain_type
+      - zone_type
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+          - latent
+          - vacant
+          - reserved
+          - occupied
+          - retired
+        center_x_u:
+          type: integer
+        center_y_u:
+          type: integer
+        terrain_type:
+          type: string
+        zone_type:
+          type: string
+        scenic_tags:
+          type: array
+          items:
+            type: string
+        build_bounds:
+          type: object
+          additionalProperties: true
+    PropertyPreview:
+      type: object
+      required:
+      - id
+      - plot_id
+      - structure_asset_id
+      - access_mode
+      - away_access_mode
+      properties:
+        id:
+          type: string
+          format: uuid
+        plot_id:
+          type: string
+          format: uuid
+        structure_asset_id:
+          type: string
+        access_mode:
+          type: string
+          enum:
+          - open
+          - closed
+        has_active_stayers:
+          type: boolean
+        away_access_mode:
+          type: string
+          enum:
+          - open
+          - closed
+    Property:
+      allOf:
+      - $ref: '#/components/schemas/PropertyPreview'
+      - type: object
+        required:
+        - owner_resident_id
+        - allow_stays
+        - stay_capacity
+        - revision
+        properties:
+          owner_resident_id:
+            type: string
+            format: uuid
+          allow_stays:
+            type: boolean
+          stay_capacity:
+            type: integer
+          is_primary_home:
+            type: boolean
+          revision:
+            type: integer
+            format: int64
+    Space:
+      type: object
+      required:
+      - id
+      - property_id
+      - layout_revision
+      - visitor_capacity
+      - placements
+      properties:
+        id:
+          type: string
+          format: uuid
+        property_id:
+          type: string
+          format: uuid
+        layout_revision:
+          type: integer
+          format: int64
+        visitor_capacity:
+          type: integer
+        placements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Placement'
+    PlacementInput:
+      type: object
+      required:
+      - item_instance_id
+      - x_u
+      - y_u
+      - rotation_q
+      properties:
+        item_instance_id:
+          type: string
+          format: uuid
+        x_u:
+          type: integer
+        y_u:
+          type: integer
+        rotation_q:
+          type: integer
+          minimum: 0
+          maximum: 3
+        scale_milli:
+          type: integer
+          minimum: 500
+          maximum: 2000
+          default: 1000
+        layer:
+          type: integer
+          default: 0
+    Placement:
+      allOf:
+      - $ref: '#/components/schemas/PlacementInput'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+    ItemInstance:
+      type: object
+      required:
+      - id
+      - definition_id
+      - state
+      properties:
+        id:
+          type: string
+          format: uuid
+        definition_id:
+          type: string
+          format: uuid
+        state:
+          type: string
+        provenance:
+          type: object
+          additionalProperties: true
+    Gift:
+      type: object
+      required:
+      - id
+      - giver_resident_id
+      - recipient_resident_id
+      - item_instance_id
+      - status
+      - created_at
+      - property_id
+      - space_id
+      - drop_x_u
+      - drop_y_u
+      properties:
+        id:
+          type: string
+          format: uuid
+        giver_resident_id:
+          type: string
+          format: uuid
+        recipient_resident_id:
+          type: string
+          format: uuid
+        item_instance_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+          - pending_placement
+          - kept_here
+          - put_away
+          - declined
+        created_at:
+          type: string
+          format: date-time
+        property_id:
+          type: string
+          format: uuid
+        space_id:
+          type: string
+          format: uuid
+        drop_x_u:
+          type: integer
+        drop_y_u:
+          type: integer
+    Wallet:
+      type: object
+      required:
+      - currency_code
+      - balance
+      properties:
+        currency_code:
+          type: string
+        balance:
+          type: integer
+          format: int64
+    StoreListing:
+      type: object
+      required:
+      - id
+      - item_definition_id
+      - unit_price
+      - status
+      properties:
+        id:
+          type: string
+          format: uuid
+        item_definition_id:
+          type: string
+          format: uuid
+        unit_price:
+          type: integer
+          format: int64
+          minimum: 0
+        stock_quantity:
+          type: integer
+          format: int64
+          minimum: 0
+        status:
+          type: string
+          enum:
+          - active
+          - paused
+          - sold_out
+          - ended
+    MutationResponse:
+      type: object
+      required:
+      - request_id
+      properties:
+        request_id:
+          type: string
+        revision:
+          type: integer
+          format: int64
+        resource_id:
+          type: string
+          format: uuid
+    ErrorResponse:
+      type: object
+      required:
+      - request_id
+      - code
+      - message
+      properties:
+        request_id:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+security:
+- bearerAuth: []

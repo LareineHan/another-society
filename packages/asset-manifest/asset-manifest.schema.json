@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://implemon.com/schemas/another-society/asset-manifest-v0.3.schema.json",
+  "title": "Another Society Asset Manifest v0.3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pack_id",
+    "pack_version",
+    "assets"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pack_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id",
+          "kind",
+          "sprite_key",
+          "anchor",
+          "footprint_u",
+          "render_layer",
+          "rotations",
+          "gift_eligible",
+          "content_rating"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "mini_part",
+              "furniture",
+              "decor",
+              "plant",
+              "structure",
+              "terrain",
+              "road",
+              "gift",
+              "effect"
+            ]
+          },
+          "sprite_key": {
+            "type": "string"
+          },
+          "anchor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y"
+            ],
+            "properties": {
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "footprint_u": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "w",
+              "d"
+            ],
+            "properties": {
+              "w": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "d": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "render_layer": {
+            "type": "integer"
+          },
+          "rotations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "enum": [
+                0,
+                45,
+                90,
+                135,
+                180,
+                225,
+                270,
+                315
+              ]
+            },
+            "uniqueItems": true
+          },
+          "gift_eligible": {
+            "type": "boolean"
+          },
+          "content_rating": {
+            "enum": [
+              "general",
+              "teen"
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          },
+          "animation_manifest": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

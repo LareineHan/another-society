@@ -1,0 +1,328 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://implemon.com/schemas/another-society/world-template-v0.3.schema.json",
+  "title": "Another Society World Template v0.3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "generator_version",
+    "coordinate_system",
+    "city",
+    "districts",
+    "activation_bundles",
+    "road_nodes",
+    "road_edges",
+    "plots",
+    "civic_anchors"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generator_version": {
+      "type": "string",
+      "const": "0.3"
+    },
+    "coordinate_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "units_per_tile",
+        "chunk_size_u"
+      ],
+      "properties": {
+        "units_per_tile": {
+          "type": "integer",
+          "const": 1000
+        },
+        "chunk_size_u": {
+          "type": "integer",
+          "const": 32000
+        }
+      }
+    },
+    "city": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stable_key",
+        "name",
+        "theme"
+      ],
+      "properties": {
+        "stable_key": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "theme": {
+          "type": "string"
+        }
+      }
+    },
+    "districts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stable_key",
+          "name",
+          "activation_order"
+        ],
+        "properties": {
+          "stable_key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "activation_order": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "activation_bundles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stable_key",
+          "activation_order",
+          "initial_active",
+          "plot_count"
+        ],
+        "properties": {
+          "stable_key": {
+            "type": "string"
+          },
+          "activation_order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "initial_active": {
+            "type": "boolean"
+          },
+          "plot_count": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "road_nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stable_key",
+          "x_u",
+          "y_u",
+          "node_kind"
+        ],
+        "properties": {
+          "stable_key": {
+            "type": "string"
+          },
+          "x_u": {
+            "type": "integer"
+          },
+          "y_u": {
+            "type": "integer"
+          },
+          "node_kind": {
+            "enum": [
+              "junction",
+              "frontage",
+              "civic",
+              "gate"
+            ]
+          },
+          "activation_bundle": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "road_edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stable_key",
+          "from_node",
+          "to_node",
+          "edge_kind",
+          "weight_u",
+          "polyline"
+        ],
+        "properties": {
+          "stable_key": {
+            "type": "string"
+          },
+          "from_node": {
+            "type": "string"
+          },
+          "to_node": {
+            "type": "string"
+          },
+          "edge_kind": {
+            "enum": [
+              "arterial",
+              "local",
+              "trail"
+            ]
+          },
+          "weight_u": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "activation_bundle": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "polyline": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "$ref": "#/$defs/point"
+            }
+          }
+        }
+      }
+    },
+    "plots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stable_key",
+          "district_key",
+          "activation_bundle",
+          "activation_order",
+          "chunk_x",
+          "chunk_y",
+          "center",
+          "terrain",
+          "zone",
+          "frontage_node",
+          "build_bounds",
+          "scenic_tags"
+        ],
+        "properties": {
+          "stable_key": {
+            "type": "string"
+          },
+          "district_key": {
+            "type": "string"
+          },
+          "activation_bundle": {
+            "type": "string"
+          },
+          "activation_order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "chunk_x": {
+            "type": "integer"
+          },
+          "chunk_y": {
+            "type": "integer"
+          },
+          "center": {
+            "$ref": "#/$defs/point"
+          },
+          "terrain": {
+            "type": "string"
+          },
+          "zone": {
+            "enum": [
+              "residential",
+              "mixed",
+              "commercial",
+              "civic"
+            ]
+          },
+          "frontage_node": {
+            "type": "string"
+          },
+          "build_bounds": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "$ref": "#/$defs/point"
+            }
+          },
+          "scenic_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "civic_anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stable_key",
+          "kind",
+          "position",
+          "road_node"
+        ],
+        "properties": {
+          "stable_key": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "position": {
+            "$ref": "#/$defs/point"
+          },
+          "road_node": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x_u",
+        "y_u"
+      ],
+      "properties": {
+        "x_u": {
+          "type": "integer"
+        },
+        "y_u": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

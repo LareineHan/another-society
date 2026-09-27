@@ -1,0 +1,14 @@
+{
+  "name": "@as/world-template",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@as/db": "workspace:*",
+    "@as/domain": "workspace:*",
+    "ajv": "^8.17.1",
+    "pg": "^8.13.1"
+  }
+}

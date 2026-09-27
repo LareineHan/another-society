@@ -1,0 +1,1304 @@
+{
+  "pack_id": "core-dev",
+  "pack_version": "1",
+  "assets": [
+    {
+      "asset_id": "furniture.bed.simple.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.bed.simple.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 2000,
+        "d": 3000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "furniture.chair.softwood.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.chair.softwood.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "furniture.table.round.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.table.round.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 2000,
+        "d": 2000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "decor.lamp.paper.001",
+      "kind": "decor",
+      "sprite_key": "core-dev-v1/decor.lamp.paper.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "furniture.sofa.small.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.sofa.small.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 3000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "furniture.shelf.low.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.shelf.low.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 2000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "furniture.desk.writing.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.desk.writing.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 2000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "decor.rug.woven.001",
+      "kind": "decor",
+      "sprite_key": "core-dev-v1/decor.rug.woven.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 3000,
+        "d": 2000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "furniture.bench.garden.001",
+      "kind": "furniture",
+      "sprite_key": "core-dev-v1/furniture.bench.garden.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 2000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "decor.clock.wall.001",
+      "kind": "decor",
+      "sprite_key": "core-dev-v1/decor.clock.wall.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "plant.monstera.001",
+      "kind": "plant",
+      "sprite_key": "core-dev-v1/plant.monstera.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "decor.stove.wood.001",
+      "kind": "decor",
+      "sprite_key": "core-dev-v1/decor.stove.wood.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 2000,
+        "d": 2000
+      },
+      "render_layer": 20,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.flower.vase.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.flower.vase.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.teacup.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.teacup.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.candle.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.candle.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.book.stack.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.book.stack.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.fern.potted.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.fern.potted.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.cushion.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.cushion.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.lantern.small.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.lantern.small.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.music-box.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.music-box.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.pebble.smooth.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.pebble.smooth.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "gift.snow-globe.001",
+      "kind": "gift",
+      "sprite_key": "core-dev-v1/gift.snow-globe.001.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.88
+      },
+      "footprint_u": {
+        "w": 1000,
+        "d": 1000
+      },
+      "render_layer": 30,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": true,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "structure.home.cottage.a",
+      "kind": "structure",
+      "sprite_key": "core-dev-v1/structure.home.cottage.a.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.92
+      },
+      "footprint_u": {
+        "w": 4000,
+        "d": 3000
+      },
+      "render_layer": 10,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "structure.home.cottage.b",
+      "kind": "structure",
+      "sprite_key": "core-dev-v1/structure.home.cottage.b.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.92
+      },
+      "footprint_u": {
+        "w": 4000,
+        "d": 3000
+      },
+      "render_layer": 10,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "structure.home.cottage.c",
+      "kind": "structure",
+      "sprite_key": "core-dev-v1/structure.home.cottage.c.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.92
+      },
+      "footprint_u": {
+        "w": 4000,
+        "d": 3000
+      },
+      "render_layer": 10,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.body.a",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.body.a.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": "core-dev-v1/mini.body.a.anim.json"
+    },
+    {
+      "asset_id": "mini.body.b",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.body.b.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": "core-dev-v1/mini.body.b.anim.json"
+    },
+    {
+      "asset_id": "mini.body.c",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.body.c.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": "core-dev-v1/mini.body.c.anim.json"
+    },
+    {
+      "asset_id": "mini.skin.1",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.skin.1.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.skin.2",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.skin.2.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.skin.3",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.skin.3.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.skin.4",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.skin.4.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.skin.5",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.skin.5.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.skin.6",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.skin.6.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.hair.none",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.hair.none.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.hair.short",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.hair.short.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.hair.bob",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.hair.bob.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.hair.long",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.hair.long.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.hair.bun",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.hair.bun.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.hair.curly",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.hair.curly.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.haircolor.black",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.haircolor.black.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.haircolor.brown",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.haircolor.brown.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.haircolor.blond",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.haircolor.blond.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.haircolor.red",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.haircolor.red.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.haircolor.grey",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.haircolor.grey.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.haircolor.blue",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.haircolor.blue.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.outfit.sweater",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.outfit.sweater.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.outfit.coat",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.outfit.coat.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.outfit.overalls",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.outfit.overalls.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.outfit.dress",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.outfit.dress.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.outfit.hoodie",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.outfit.hoodie.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.palette.oat",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.palette.oat.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.palette.moss",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.palette.moss.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.palette.clay",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.palette.clay.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.palette.sky",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.palette.sky.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.palette.plum",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.palette.plum.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.palette.ink",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.palette.ink.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.acc.none",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.acc.none.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.acc.glasses",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.acc.glasses.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.acc.scarf",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.acc.scarf.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.acc.hat",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.acc.hat.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    },
+    {
+      "asset_id": "mini.acc.bag",
+      "kind": "mini_part",
+      "sprite_key": "core-dev-v1/mini.acc.bag.png",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.95
+      },
+      "footprint_u": {
+        "w": 0,
+        "d": 0
+      },
+      "render_layer": 40,
+      "rotations": [
+        0
+      ],
+      "gift_eligible": false,
+      "content_rating": "general",
+      "animation_manifest": null
+    }
+  ]
+}

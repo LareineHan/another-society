@@ -1,0 +1,14 @@
+{
+  "name": "@as/api-contract",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^13.1.0"
+  }
+}

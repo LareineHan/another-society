@@ -1,0 +1,15 @@
+{
+  "name": "@as/jobs",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": {
+    "pg": "^8.13.1",
+    "jose": "^5.9.6",
+    "drizzle-orm": "^0.44.0",
+    "@as/domain": "workspace:*",
+    "@as/db": "workspace:*",
+    "@as/world-api": "workspace:*"
+  }
+}

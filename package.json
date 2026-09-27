@@ -1,0 +1,42 @@
+{
+  "name": "another-society",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:migrate": "tsx packages/db/src/cli.ts migrate",
+    "db:seed": "tsx packages/db/src/cli.ts seed",
+    "world:validate": "tsx packages/world-template/src/cli.ts validate world/templates/founding-city-dev.v0.3.json",
+    "world:import": "tsx packages/world-template/src/cli.ts import world/templates/founding-city-dev.v0.3.json",
+    "contract:lint": "tsx packages/api-contract/scripts/lint.ts",
+    "contract:gen": "openapi-typescript packages/api-contract/openapi.yaml -o packages/api-contract/src/generated.ts",
+    "contract:check": "pnpm contract:gen && git diff --exit-code packages/api-contract/src/generated.ts",
+    "reconcile": "tsx services/jobs/src/cli.ts reconcile",
+    "ci": "pnpm typecheck && pnpm contract:lint && pnpm world:validate && pnpm test"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^13.1.0",
+    "@cloudflare/workers-types": "^5.20260927.1",
+    "@types/node": "^22",
+    "@types/pg": "^8.23.1",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3",
+    "drizzle-kit": "^0.31.11",
+    "drizzle-orm": "^0.44.0",
+    "hono": "^4.6.14",
+    "jose": "^5.9.6",
+    "openapi-typescript": "^7",
+    "pg": "^8.13.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7",
+    "vitest": "^3",
+    "wrangler": "^4",
+    "yaml": "^2.6.1",
+    "zod": "^3.25.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@as/domain",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {}
+}

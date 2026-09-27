@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+coverage/
+# iOS
+apps/ios/**/xcuserdata/
+apps/ios/**/DerivedData/
+apps/ios/build/

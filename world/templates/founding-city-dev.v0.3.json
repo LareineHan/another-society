@@ -1,0 +1,7590 @@
+{
+  "template_id": "founding-city-dev-v0.3",
+  "generator_version": "0.3",
+  "coordinate_system": {
+    "units_per_tile": 1000,
+    "chunk_size_u": 32000
+  },
+  "city": {
+    "stable_key": "founding-city",
+    "name": "Founding City DEV",
+    "theme": "compact mountain town"
+  },
+  "districts": [
+    {
+      "stable_key": "founders",
+      "name": "Founders District",
+      "activation_order": 0
+    }
+  ],
+  "activation_bundles": [
+    {
+      "stable_key": "b0",
+      "activation_order": 0,
+      "initial_active": true,
+      "plot_count": 16
+    },
+    {
+      "stable_key": "b1",
+      "activation_order": 1,
+      "initial_active": false,
+      "plot_count": 20
+    },
+    {
+      "stable_key": "b2",
+      "activation_order": 2,
+      "initial_active": false,
+      "plot_count": 20
+    },
+    {
+      "stable_key": "b3",
+      "activation_order": 3,
+      "initial_active": false,
+      "plot_count": 20
+    },
+    {
+      "stable_key": "b4",
+      "activation_order": 4,
+      "initial_active": false,
+      "plot_count": 20
+    },
+    {
+      "stable_key": "b5",
+      "activation_order": 5,
+      "initial_active": false,
+      "plot_count": 24
+    }
+  ],
+  "road_nodes": [
+    {
+      "stable_key": "main_w",
+      "x_u": -20000,
+      "y_u": 0,
+      "node_kind": "gate",
+      "activation_bundle": null
+    },
+    {
+      "stable_key": "main_c",
+      "x_u": 0,
+      "y_u": 0,
+      "node_kind": "civic",
+      "activation_bundle": null
+    },
+    {
+      "stable_key": "main_e",
+      "x_u": 20000,
+      "y_u": 0,
+      "node_kind": "gate",
+      "activation_bundle": null
+    },
+    {
+      "stable_key": "b0_n00",
+      "x_u": -15000,
+      "y_u": 6000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n01",
+      "x_u": -15000,
+      "y_u": 11000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n02",
+      "x_u": -15000,
+      "y_u": 16000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n03",
+      "x_u": -15000,
+      "y_u": 21000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n04",
+      "x_u": -15000,
+      "y_u": 26000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n05",
+      "x_u": -15000,
+      "y_u": 31000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n06",
+      "x_u": -15000,
+      "y_u": 36000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n07",
+      "x_u": -15000,
+      "y_u": 41000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n08",
+      "x_u": -15000,
+      "y_u": 46000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n09",
+      "x_u": -15000,
+      "y_u": 51000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n10",
+      "x_u": -15000,
+      "y_u": 56000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n11",
+      "x_u": -15000,
+      "y_u": 61000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n12",
+      "x_u": -15000,
+      "y_u": 66000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n13",
+      "x_u": -15000,
+      "y_u": 71000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n14",
+      "x_u": -15000,
+      "y_u": 76000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b0_n15",
+      "x_u": -15000,
+      "y_u": 81000,
+      "node_kind": "frontage",
+      "activation_bundle": "b0"
+    },
+    {
+      "stable_key": "b1_n00",
+      "x_u": -9000,
+      "y_u": -6000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n01",
+      "x_u": -9000,
+      "y_u": -11000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n02",
+      "x_u": -9000,
+      "y_u": -16000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n03",
+      "x_u": -9000,
+      "y_u": -21000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n04",
+      "x_u": -9000,
+      "y_u": -26000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n05",
+      "x_u": -9000,
+      "y_u": -31000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n06",
+      "x_u": -9000,
+      "y_u": -36000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n07",
+      "x_u": -9000,
+      "y_u": -41000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n08",
+      "x_u": -9000,
+      "y_u": -46000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n09",
+      "x_u": -9000,
+      "y_u": -51000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n10",
+      "x_u": -9000,
+      "y_u": -56000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n11",
+      "x_u": -9000,
+      "y_u": -61000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n12",
+      "x_u": -9000,
+      "y_u": -66000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n13",
+      "x_u": -9000,
+      "y_u": -71000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n14",
+      "x_u": -9000,
+      "y_u": -76000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n15",
+      "x_u": -9000,
+      "y_u": -81000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n16",
+      "x_u": -9000,
+      "y_u": -86000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n17",
+      "x_u": -9000,
+      "y_u": -91000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n18",
+      "x_u": -9000,
+      "y_u": -96000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b1_n19",
+      "x_u": -9000,
+      "y_u": -101000,
+      "node_kind": "frontage",
+      "activation_bundle": "b1"
+    },
+    {
+      "stable_key": "b2_n00",
+      "x_u": -3000,
+      "y_u": 6000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n01",
+      "x_u": -3000,
+      "y_u": 11000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n02",
+      "x_u": -3000,
+      "y_u": 16000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n03",
+      "x_u": -3000,
+      "y_u": 21000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n04",
+      "x_u": -3000,
+      "y_u": 26000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n05",
+      "x_u": -3000,
+      "y_u": 31000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n06",
+      "x_u": -3000,
+      "y_u": 36000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n07",
+      "x_u": -3000,
+      "y_u": 41000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n08",
+      "x_u": -3000,
+      "y_u": 46000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n09",
+      "x_u": -3000,
+      "y_u": 51000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n10",
+      "x_u": -3000,
+      "y_u": 56000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n11",
+      "x_u": -3000,
+      "y_u": 61000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n12",
+      "x_u": -3000,
+      "y_u": 66000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n13",
+      "x_u": -3000,
+      "y_u": 71000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n14",
+      "x_u": -3000,
+      "y_u": 76000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n15",
+      "x_u": -3000,
+      "y_u": 81000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n16",
+      "x_u": -3000,
+      "y_u": 86000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n17",
+      "x_u": -3000,
+      "y_u": 91000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n18",
+      "x_u": -3000,
+      "y_u": 96000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b2_n19",
+      "x_u": -3000,
+      "y_u": 101000,
+      "node_kind": "frontage",
+      "activation_bundle": "b2"
+    },
+    {
+      "stable_key": "b3_n00",
+      "x_u": 3000,
+      "y_u": -6000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n01",
+      "x_u": 3000,
+      "y_u": -11000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n02",
+      "x_u": 3000,
+      "y_u": -16000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n03",
+      "x_u": 3000,
+      "y_u": -21000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n04",
+      "x_u": 3000,
+      "y_u": -26000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n05",
+      "x_u": 3000,
+      "y_u": -31000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n06",
+      "x_u": 3000,
+      "y_u": -36000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n07",
+      "x_u": 3000,
+      "y_u": -41000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n08",
+      "x_u": 3000,
+      "y_u": -46000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n09",
+      "x_u": 3000,
+      "y_u": -51000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n10",
+      "x_u": 3000,
+      "y_u": -56000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n11",
+      "x_u": 3000,
+      "y_u": -61000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n12",
+      "x_u": 3000,
+      "y_u": -66000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n13",
+      "x_u": 3000,
+      "y_u": -71000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n14",
+      "x_u": 3000,
+      "y_u": -76000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n15",
+      "x_u": 3000,
+      "y_u": -81000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n16",
+      "x_u": 3000,
+      "y_u": -86000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n17",
+      "x_u": 3000,
+      "y_u": -91000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n18",
+      "x_u": 3000,
+      "y_u": -96000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b3_n19",
+      "x_u": 3000,
+      "y_u": -101000,
+      "node_kind": "frontage",
+      "activation_bundle": "b3"
+    },
+    {
+      "stable_key": "b4_n00",
+      "x_u": 9000,
+      "y_u": 6000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n01",
+      "x_u": 9000,
+      "y_u": 11000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n02",
+      "x_u": 9000,
+      "y_u": 16000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n03",
+      "x_u": 9000,
+      "y_u": 21000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n04",
+      "x_u": 9000,
+      "y_u": 26000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n05",
+      "x_u": 9000,
+      "y_u": 31000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n06",
+      "x_u": 9000,
+      "y_u": 36000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n07",
+      "x_u": 9000,
+      "y_u": 41000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n08",
+      "x_u": 9000,
+      "y_u": 46000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n09",
+      "x_u": 9000,
+      "y_u": 51000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n10",
+      "x_u": 9000,
+      "y_u": 56000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n11",
+      "x_u": 9000,
+      "y_u": 61000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n12",
+      "x_u": 9000,
+      "y_u": 66000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n13",
+      "x_u": 9000,
+      "y_u": 71000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n14",
+      "x_u": 9000,
+      "y_u": 76000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n15",
+      "x_u": 9000,
+      "y_u": 81000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n16",
+      "x_u": 9000,
+      "y_u": 86000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n17",
+      "x_u": 9000,
+      "y_u": 91000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n18",
+      "x_u": 9000,
+      "y_u": 96000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b4_n19",
+      "x_u": 9000,
+      "y_u": 101000,
+      "node_kind": "frontage",
+      "activation_bundle": "b4"
+    },
+    {
+      "stable_key": "b5_n00",
+      "x_u": 15000,
+      "y_u": -6000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n01",
+      "x_u": 15000,
+      "y_u": -11000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n02",
+      "x_u": 15000,
+      "y_u": -16000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n03",
+      "x_u": 15000,
+      "y_u": -21000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n04",
+      "x_u": 15000,
+      "y_u": -26000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n05",
+      "x_u": 15000,
+      "y_u": -31000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n06",
+      "x_u": 15000,
+      "y_u": -36000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n07",
+      "x_u": 15000,
+      "y_u": -41000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n08",
+      "x_u": 15000,
+      "y_u": -46000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n09",
+      "x_u": 15000,
+      "y_u": -51000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n10",
+      "x_u": 15000,
+      "y_u": -56000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n11",
+      "x_u": 15000,
+      "y_u": -61000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n12",
+      "x_u": 15000,
+      "y_u": -66000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n13",
+      "x_u": 15000,
+      "y_u": -71000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n14",
+      "x_u": 15000,
+      "y_u": -76000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n15",
+      "x_u": 15000,
+      "y_u": -81000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n16",
+      "x_u": 15000,
+      "y_u": -86000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n17",
+      "x_u": 15000,
+      "y_u": -91000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n18",
+      "x_u": 15000,
+      "y_u": -96000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n19",
+      "x_u": 15000,
+      "y_u": -101000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n20",
+      "x_u": 15000,
+      "y_u": -106000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n21",
+      "x_u": 15000,
+      "y_u": -111000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n22",
+      "x_u": 15000,
+      "y_u": -116000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    },
+    {
+      "stable_key": "b5_n23",
+      "x_u": 15000,
+      "y_u": -121000,
+      "node_kind": "frontage",
+      "activation_bundle": "b5"
+    }
+  ],
+  "road_edges": [
+    {
+      "stable_key": "main_w_c",
+      "from_node": "main_w",
+      "to_node": "main_c",
+      "edge_kind": "arterial",
+      "weight_u": 20000,
+      "activation_bundle": null,
+      "polyline": [
+        {
+          "x_u": -20000,
+          "y_u": 0
+        },
+        {
+          "x_u": 0,
+          "y_u": 0
+        }
+      ]
+    },
+    {
+      "stable_key": "main_c_e",
+      "from_node": "main_c",
+      "to_node": "main_e",
+      "edge_kind": "arterial",
+      "weight_u": 20000,
+      "activation_bundle": null,
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": 20000,
+          "y_u": 0
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e00",
+      "from_node": "main_c",
+      "to_node": "b0_n00",
+      "edge_kind": "local",
+      "weight_u": 21000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": -15000,
+          "y_u": 6000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e01",
+      "from_node": "b0_n00",
+      "to_node": "b0_n01",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 6000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 11000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e02",
+      "from_node": "b0_n01",
+      "to_node": "b0_n02",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 11000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 16000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e03",
+      "from_node": "b0_n02",
+      "to_node": "b0_n03",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 16000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 21000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e04",
+      "from_node": "b0_n03",
+      "to_node": "b0_n04",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 21000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 26000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e05",
+      "from_node": "b0_n04",
+      "to_node": "b0_n05",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 26000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 31000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e06",
+      "from_node": "b0_n05",
+      "to_node": "b0_n06",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 31000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 36000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e07",
+      "from_node": "b0_n06",
+      "to_node": "b0_n07",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 36000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 41000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e08",
+      "from_node": "b0_n07",
+      "to_node": "b0_n08",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 41000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 46000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e09",
+      "from_node": "b0_n08",
+      "to_node": "b0_n09",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 46000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 51000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e10",
+      "from_node": "b0_n09",
+      "to_node": "b0_n10",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 51000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 56000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e11",
+      "from_node": "b0_n10",
+      "to_node": "b0_n11",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 56000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 61000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e12",
+      "from_node": "b0_n11",
+      "to_node": "b0_n12",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 61000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 66000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e13",
+      "from_node": "b0_n12",
+      "to_node": "b0_n13",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 66000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 71000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e14",
+      "from_node": "b0_n13",
+      "to_node": "b0_n14",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 71000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 76000
+        }
+      ]
+    },
+    {
+      "stable_key": "b0_e15",
+      "from_node": "b0_n14",
+      "to_node": "b0_n15",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b0",
+      "polyline": [
+        {
+          "x_u": -15000,
+          "y_u": 76000
+        },
+        {
+          "x_u": -15000,
+          "y_u": 81000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e00",
+      "from_node": "main_c",
+      "to_node": "b1_n00",
+      "edge_kind": "local",
+      "weight_u": 15000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": -9000,
+          "y_u": -6000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e01",
+      "from_node": "b1_n00",
+      "to_node": "b1_n01",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -6000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -11000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e02",
+      "from_node": "b1_n01",
+      "to_node": "b1_n02",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -11000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -16000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e03",
+      "from_node": "b1_n02",
+      "to_node": "b1_n03",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -16000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -21000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e04",
+      "from_node": "b1_n03",
+      "to_node": "b1_n04",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -21000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -26000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e05",
+      "from_node": "b1_n04",
+      "to_node": "b1_n05",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -26000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -31000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e06",
+      "from_node": "b1_n05",
+      "to_node": "b1_n06",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -31000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -36000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e07",
+      "from_node": "b1_n06",
+      "to_node": "b1_n07",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -36000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -41000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e08",
+      "from_node": "b1_n07",
+      "to_node": "b1_n08",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -41000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -46000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e09",
+      "from_node": "b1_n08",
+      "to_node": "b1_n09",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -46000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -51000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e10",
+      "from_node": "b1_n09",
+      "to_node": "b1_n10",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -51000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -56000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e11",
+      "from_node": "b1_n10",
+      "to_node": "b1_n11",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -56000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -61000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e12",
+      "from_node": "b1_n11",
+      "to_node": "b1_n12",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -61000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -66000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e13",
+      "from_node": "b1_n12",
+      "to_node": "b1_n13",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -66000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -71000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e14",
+      "from_node": "b1_n13",
+      "to_node": "b1_n14",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -71000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -76000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e15",
+      "from_node": "b1_n14",
+      "to_node": "b1_n15",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -76000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -81000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e16",
+      "from_node": "b1_n15",
+      "to_node": "b1_n16",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -81000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -86000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e17",
+      "from_node": "b1_n16",
+      "to_node": "b1_n17",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -86000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -91000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e18",
+      "from_node": "b1_n17",
+      "to_node": "b1_n18",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -91000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -96000
+        }
+      ]
+    },
+    {
+      "stable_key": "b1_e19",
+      "from_node": "b1_n18",
+      "to_node": "b1_n19",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b1",
+      "polyline": [
+        {
+          "x_u": -9000,
+          "y_u": -96000
+        },
+        {
+          "x_u": -9000,
+          "y_u": -101000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e00",
+      "from_node": "main_c",
+      "to_node": "b2_n00",
+      "edge_kind": "local",
+      "weight_u": 9000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": -3000,
+          "y_u": 6000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e01",
+      "from_node": "b2_n00",
+      "to_node": "b2_n01",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 6000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 11000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e02",
+      "from_node": "b2_n01",
+      "to_node": "b2_n02",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 11000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 16000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e03",
+      "from_node": "b2_n02",
+      "to_node": "b2_n03",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 16000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 21000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e04",
+      "from_node": "b2_n03",
+      "to_node": "b2_n04",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 21000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 26000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e05",
+      "from_node": "b2_n04",
+      "to_node": "b2_n05",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 26000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 31000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e06",
+      "from_node": "b2_n05",
+      "to_node": "b2_n06",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 31000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 36000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e07",
+      "from_node": "b2_n06",
+      "to_node": "b2_n07",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 36000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 41000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e08",
+      "from_node": "b2_n07",
+      "to_node": "b2_n08",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 41000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 46000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e09",
+      "from_node": "b2_n08",
+      "to_node": "b2_n09",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 46000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 51000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e10",
+      "from_node": "b2_n09",
+      "to_node": "b2_n10",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 51000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 56000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e11",
+      "from_node": "b2_n10",
+      "to_node": "b2_n11",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 56000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 61000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e12",
+      "from_node": "b2_n11",
+      "to_node": "b2_n12",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 61000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 66000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e13",
+      "from_node": "b2_n12",
+      "to_node": "b2_n13",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 66000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 71000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e14",
+      "from_node": "b2_n13",
+      "to_node": "b2_n14",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 71000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 76000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e15",
+      "from_node": "b2_n14",
+      "to_node": "b2_n15",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 76000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 81000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e16",
+      "from_node": "b2_n15",
+      "to_node": "b2_n16",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 81000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 86000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e17",
+      "from_node": "b2_n16",
+      "to_node": "b2_n17",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 86000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 91000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e18",
+      "from_node": "b2_n17",
+      "to_node": "b2_n18",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 91000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 96000
+        }
+      ]
+    },
+    {
+      "stable_key": "b2_e19",
+      "from_node": "b2_n18",
+      "to_node": "b2_n19",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b2",
+      "polyline": [
+        {
+          "x_u": -3000,
+          "y_u": 96000
+        },
+        {
+          "x_u": -3000,
+          "y_u": 101000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e00",
+      "from_node": "main_c",
+      "to_node": "b3_n00",
+      "edge_kind": "local",
+      "weight_u": 9000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": 3000,
+          "y_u": -6000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e01",
+      "from_node": "b3_n00",
+      "to_node": "b3_n01",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -6000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -11000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e02",
+      "from_node": "b3_n01",
+      "to_node": "b3_n02",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -11000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -16000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e03",
+      "from_node": "b3_n02",
+      "to_node": "b3_n03",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -16000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -21000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e04",
+      "from_node": "b3_n03",
+      "to_node": "b3_n04",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -21000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -26000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e05",
+      "from_node": "b3_n04",
+      "to_node": "b3_n05",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -26000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -31000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e06",
+      "from_node": "b3_n05",
+      "to_node": "b3_n06",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -31000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -36000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e07",
+      "from_node": "b3_n06",
+      "to_node": "b3_n07",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -36000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -41000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e08",
+      "from_node": "b3_n07",
+      "to_node": "b3_n08",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -41000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -46000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e09",
+      "from_node": "b3_n08",
+      "to_node": "b3_n09",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -46000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -51000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e10",
+      "from_node": "b3_n09",
+      "to_node": "b3_n10",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -51000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -56000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e11",
+      "from_node": "b3_n10",
+      "to_node": "b3_n11",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -56000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -61000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e12",
+      "from_node": "b3_n11",
+      "to_node": "b3_n12",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -61000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -66000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e13",
+      "from_node": "b3_n12",
+      "to_node": "b3_n13",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -66000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -71000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e14",
+      "from_node": "b3_n13",
+      "to_node": "b3_n14",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -71000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -76000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e15",
+      "from_node": "b3_n14",
+      "to_node": "b3_n15",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -76000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -81000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e16",
+      "from_node": "b3_n15",
+      "to_node": "b3_n16",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -81000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -86000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e17",
+      "from_node": "b3_n16",
+      "to_node": "b3_n17",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -86000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -91000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e18",
+      "from_node": "b3_n17",
+      "to_node": "b3_n18",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -91000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -96000
+        }
+      ]
+    },
+    {
+      "stable_key": "b3_e19",
+      "from_node": "b3_n18",
+      "to_node": "b3_n19",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b3",
+      "polyline": [
+        {
+          "x_u": 3000,
+          "y_u": -96000
+        },
+        {
+          "x_u": 3000,
+          "y_u": -101000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e00",
+      "from_node": "main_c",
+      "to_node": "b4_n00",
+      "edge_kind": "local",
+      "weight_u": 15000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": 9000,
+          "y_u": 6000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e01",
+      "from_node": "b4_n00",
+      "to_node": "b4_n01",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 6000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 11000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e02",
+      "from_node": "b4_n01",
+      "to_node": "b4_n02",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 11000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 16000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e03",
+      "from_node": "b4_n02",
+      "to_node": "b4_n03",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 16000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 21000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e04",
+      "from_node": "b4_n03",
+      "to_node": "b4_n04",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 21000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 26000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e05",
+      "from_node": "b4_n04",
+      "to_node": "b4_n05",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 26000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 31000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e06",
+      "from_node": "b4_n05",
+      "to_node": "b4_n06",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 31000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 36000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e07",
+      "from_node": "b4_n06",
+      "to_node": "b4_n07",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 36000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 41000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e08",
+      "from_node": "b4_n07",
+      "to_node": "b4_n08",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 41000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 46000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e09",
+      "from_node": "b4_n08",
+      "to_node": "b4_n09",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 46000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 51000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e10",
+      "from_node": "b4_n09",
+      "to_node": "b4_n10",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 51000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 56000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e11",
+      "from_node": "b4_n10",
+      "to_node": "b4_n11",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 56000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 61000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e12",
+      "from_node": "b4_n11",
+      "to_node": "b4_n12",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 61000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 66000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e13",
+      "from_node": "b4_n12",
+      "to_node": "b4_n13",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 66000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 71000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e14",
+      "from_node": "b4_n13",
+      "to_node": "b4_n14",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 71000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 76000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e15",
+      "from_node": "b4_n14",
+      "to_node": "b4_n15",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 76000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 81000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e16",
+      "from_node": "b4_n15",
+      "to_node": "b4_n16",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 81000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 86000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e17",
+      "from_node": "b4_n16",
+      "to_node": "b4_n17",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 86000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 91000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e18",
+      "from_node": "b4_n17",
+      "to_node": "b4_n18",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 91000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 96000
+        }
+      ]
+    },
+    {
+      "stable_key": "b4_e19",
+      "from_node": "b4_n18",
+      "to_node": "b4_n19",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b4",
+      "polyline": [
+        {
+          "x_u": 9000,
+          "y_u": 96000
+        },
+        {
+          "x_u": 9000,
+          "y_u": 101000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e00",
+      "from_node": "main_c",
+      "to_node": "b5_n00",
+      "edge_kind": "local",
+      "weight_u": 21000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 0,
+          "y_u": 0
+        },
+        {
+          "x_u": 15000,
+          "y_u": -6000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e01",
+      "from_node": "b5_n00",
+      "to_node": "b5_n01",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -6000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -11000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e02",
+      "from_node": "b5_n01",
+      "to_node": "b5_n02",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -11000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -16000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e03",
+      "from_node": "b5_n02",
+      "to_node": "b5_n03",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -16000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -21000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e04",
+      "from_node": "b5_n03",
+      "to_node": "b5_n04",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -21000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -26000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e05",
+      "from_node": "b5_n04",
+      "to_node": "b5_n05",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -26000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -31000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e06",
+      "from_node": "b5_n05",
+      "to_node": "b5_n06",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -31000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -36000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e07",
+      "from_node": "b5_n06",
+      "to_node": "b5_n07",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -36000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -41000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e08",
+      "from_node": "b5_n07",
+      "to_node": "b5_n08",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -41000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -46000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e09",
+      "from_node": "b5_n08",
+      "to_node": "b5_n09",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -46000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -51000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e10",
+      "from_node": "b5_n09",
+      "to_node": "b5_n10",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -51000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -56000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e11",
+      "from_node": "b5_n10",
+      "to_node": "b5_n11",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -56000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -61000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e12",
+      "from_node": "b5_n11",
+      "to_node": "b5_n12",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -61000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -66000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e13",
+      "from_node": "b5_n12",
+      "to_node": "b5_n13",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -66000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -71000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e14",
+      "from_node": "b5_n13",
+      "to_node": "b5_n14",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -71000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -76000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e15",
+      "from_node": "b5_n14",
+      "to_node": "b5_n15",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -76000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -81000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e16",
+      "from_node": "b5_n15",
+      "to_node": "b5_n16",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -81000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -86000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e17",
+      "from_node": "b5_n16",
+      "to_node": "b5_n17",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -86000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -91000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e18",
+      "from_node": "b5_n17",
+      "to_node": "b5_n18",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -91000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -96000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e19",
+      "from_node": "b5_n18",
+      "to_node": "b5_n19",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -96000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -101000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e20",
+      "from_node": "b5_n19",
+      "to_node": "b5_n20",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -101000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -106000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e21",
+      "from_node": "b5_n20",
+      "to_node": "b5_n21",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -106000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -111000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e22",
+      "from_node": "b5_n21",
+      "to_node": "b5_n22",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -111000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -116000
+        }
+      ]
+    },
+    {
+      "stable_key": "b5_e23",
+      "from_node": "b5_n22",
+      "to_node": "b5_n23",
+      "edge_kind": "local",
+      "weight_u": 5000,
+      "activation_bundle": "b5",
+      "polyline": [
+        {
+          "x_u": 15000,
+          "y_u": -116000
+        },
+        {
+          "x_u": 15000,
+          "y_u": -121000
+        }
+      ]
+    }
+  ],
+  "plots": [
+    {
+      "stable_key": "p001",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -10500,
+        "y_u": 6000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n00",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 3900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 3900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 8100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 8100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p002",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -19500,
+        "y_u": 11000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n01",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 8900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 8900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 13100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 13100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p003",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -10500,
+        "y_u": 16000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n02",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 13900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 13900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 18100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 18100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p004",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -19500,
+        "y_u": 21000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n03",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 18900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 18900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 23100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 23100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p005",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -10500,
+        "y_u": 26000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n04",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 23900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 23900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 28100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 28100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p006",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -19500,
+        "y_u": 31000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n05",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 28900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 28900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 33100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 33100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p007",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -10500,
+        "y_u": 36000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n06",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 33900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 33900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 38100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 38100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p008",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -19500,
+        "y_u": 41000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n07",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 38900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 38900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 43100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 43100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p009",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -10500,
+        "y_u": 46000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n08",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 43900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 43900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 48100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 48100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p010",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -19500,
+        "y_u": 51000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n09",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 48900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 48900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 53100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 53100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p011",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -10500,
+        "y_u": 56000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n10",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 53900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 53900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 58100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 58100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p012",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -19500,
+        "y_u": 61000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n11",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 58900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 58900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 63100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 63100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p013",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -10500,
+        "y_u": 66000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n12",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 63900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 63900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 68100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 68100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p014",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -19500,
+        "y_u": 71000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n13",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 68900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 68900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 73100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 73100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p015",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -10500,
+        "y_u": 76000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n14",
+      "build_bounds": [
+        {
+          "x_u": -13100,
+          "y_u": 73900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 73900
+        },
+        {
+          "x_u": -7900,
+          "y_u": 78100
+        },
+        {
+          "x_u": -13100,
+          "y_u": 78100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p016",
+      "district_key": "founders",
+      "activation_bundle": "b0",
+      "activation_order": 0,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -19500,
+        "y_u": 81000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b0_n15",
+      "build_bounds": [
+        {
+          "x_u": -22100,
+          "y_u": 78900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 78900
+        },
+        {
+          "x_u": -16900,
+          "y_u": 83100
+        },
+        {
+          "x_u": -22100,
+          "y_u": 83100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p017",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -4500,
+        "y_u": -6000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n00",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -8100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -8100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -3900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -3900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p018",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -13500,
+        "y_u": -11000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n01",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -13100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -13100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -8900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -8900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p019",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -4500,
+        "y_u": -16000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n02",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -18100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -18100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -13900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -13900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p020",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -13500,
+        "y_u": -21000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n03",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -23100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -23100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -18900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -18900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p021",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -4500,
+        "y_u": -26000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n04",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -28100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -28100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -23900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -23900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p022",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -13500,
+        "y_u": -31000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n05",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -33100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -33100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -28900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -28900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p023",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -4500,
+        "y_u": -36000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n06",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -38100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -38100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -33900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -33900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p024",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -13500,
+        "y_u": -41000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n07",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -43100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -43100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -38900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -38900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p025",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -4500,
+        "y_u": -46000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n08",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -48100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -48100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -43900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -43900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p026",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -13500,
+        "y_u": -51000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n09",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -53100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -53100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -48900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -48900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p027",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -4500,
+        "y_u": -56000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n10",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -58100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -58100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -53900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -53900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p028",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -13500,
+        "y_u": -61000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n11",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -63100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -63100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -58900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -58900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p029",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -4500,
+        "y_u": -66000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n12",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -68100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -68100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -63900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -63900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p030",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -13500,
+        "y_u": -71000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n13",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -73100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -73100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -68900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -68900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p031",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -4500,
+        "y_u": -76000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n14",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -78100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -78100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -73900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -73900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p032",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -13500,
+        "y_u": -81000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n15",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -83100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -83100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -78900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -78900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p033",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -4500,
+        "y_u": -86000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n16",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -88100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -88100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -83900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -83900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p034",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -13500,
+        "y_u": -91000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n17",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -93100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -93100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -88900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -88900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p035",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -4500,
+        "y_u": -96000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n18",
+      "build_bounds": [
+        {
+          "x_u": -7100,
+          "y_u": -98100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -98100
+        },
+        {
+          "x_u": -1900,
+          "y_u": -93900
+        },
+        {
+          "x_u": -7100,
+          "y_u": -93900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p036",
+      "district_key": "founders",
+      "activation_bundle": "b1",
+      "activation_order": 1,
+      "chunk_x": -1,
+      "chunk_y": -4,
+      "center": {
+        "x_u": -13500,
+        "y_u": -101000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b1_n19",
+      "build_bounds": [
+        {
+          "x_u": -16100,
+          "y_u": -103100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -103100
+        },
+        {
+          "x_u": -10900,
+          "y_u": -98900
+        },
+        {
+          "x_u": -16100,
+          "y_u": -98900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p037",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 1500,
+        "y_u": 6000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n00",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 3900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 3900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 8100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 8100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p038",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -7500,
+        "y_u": 11000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n01",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 8900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 8900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 13100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 13100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p039",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 1500,
+        "y_u": 16000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n02",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 13900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 13900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 18100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 18100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p040",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -7500,
+        "y_u": 21000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n03",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 18900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 18900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 23100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 23100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p041",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 1500,
+        "y_u": 26000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n04",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 23900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 23900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 28100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 28100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p042",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 0,
+      "center": {
+        "x_u": -7500,
+        "y_u": 31000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n05",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 28900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 28900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 33100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 33100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p043",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 1500,
+        "y_u": 36000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n06",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 33900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 33900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 38100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 38100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p044",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -7500,
+        "y_u": 41000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n07",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 38900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 38900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 43100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 43100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p045",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 1500,
+        "y_u": 46000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n08",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 43900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 43900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 48100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 48100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p046",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -7500,
+        "y_u": 51000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n09",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 48900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 48900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 53100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 53100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p047",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 1500,
+        "y_u": 56000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n10",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 53900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 53900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 58100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 58100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p048",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 1,
+      "center": {
+        "x_u": -7500,
+        "y_u": 61000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n11",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 58900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 58900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 63100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 63100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p049",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 1500,
+        "y_u": 66000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n12",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 63900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 63900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 68100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 68100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p050",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -7500,
+        "y_u": 71000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n13",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 68900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 68900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 73100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 73100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p051",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 1500,
+        "y_u": 76000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n14",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 73900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 73900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 78100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 78100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p052",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -7500,
+        "y_u": 81000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n15",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 78900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 78900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 83100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 83100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p053",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 1500,
+        "y_u": 86000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n16",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 83900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 83900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 88100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 88100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p054",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 2,
+      "center": {
+        "x_u": -7500,
+        "y_u": 91000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n17",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 88900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 88900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 93100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 93100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p055",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": 0,
+      "chunk_y": 3,
+      "center": {
+        "x_u": 1500,
+        "y_u": 96000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n18",
+      "build_bounds": [
+        {
+          "x_u": -1100,
+          "y_u": 93900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 93900
+        },
+        {
+          "x_u": 4100,
+          "y_u": 98100
+        },
+        {
+          "x_u": -1100,
+          "y_u": 98100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p056",
+      "district_key": "founders",
+      "activation_bundle": "b2",
+      "activation_order": 2,
+      "chunk_x": -1,
+      "chunk_y": 3,
+      "center": {
+        "x_u": -7500,
+        "y_u": 101000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b2_n19",
+      "build_bounds": [
+        {
+          "x_u": -10100,
+          "y_u": 98900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 98900
+        },
+        {
+          "x_u": -4900,
+          "y_u": 103100
+        },
+        {
+          "x_u": -10100,
+          "y_u": 103100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p057",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 7500,
+        "y_u": -6000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n00",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -8100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -8100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -3900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -3900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p058",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -1500,
+        "y_u": -11000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n01",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -13100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -13100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -8900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -8900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p059",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 7500,
+        "y_u": -16000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n02",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -18100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -18100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -13900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -13900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p060",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -1500,
+        "y_u": -21000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n03",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -23100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -23100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -18900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -18900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p061",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 7500,
+        "y_u": -26000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n04",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -28100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -28100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -23900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -23900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p062",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -1,
+      "center": {
+        "x_u": -1500,
+        "y_u": -31000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n05",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -33100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -33100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -28900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -28900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p063",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 7500,
+        "y_u": -36000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n06",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -38100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -38100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -33900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -33900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p064",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -1500,
+        "y_u": -41000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n07",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -43100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -43100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -38900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -38900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p065",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 7500,
+        "y_u": -46000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n08",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -48100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -48100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -43900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -43900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p066",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -1500,
+        "y_u": -51000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n09",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -53100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -53100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -48900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -48900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p067",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 7500,
+        "y_u": -56000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n10",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -58100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -58100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -53900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -53900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p068",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -2,
+      "center": {
+        "x_u": -1500,
+        "y_u": -61000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n11",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -63100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -63100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -58900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -58900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p069",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 7500,
+        "y_u": -66000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n12",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -68100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -68100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -63900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -63900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p070",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -1500,
+        "y_u": -71000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n13",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -73100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -73100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -68900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -68900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p071",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 7500,
+        "y_u": -76000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n14",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -78100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -78100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -73900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -73900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p072",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -1500,
+        "y_u": -81000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n15",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -83100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -83100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -78900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -78900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p073",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 7500,
+        "y_u": -86000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n16",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -88100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -88100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -83900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -83900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p074",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -3,
+      "center": {
+        "x_u": -1500,
+        "y_u": -91000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n17",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -93100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -93100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -88900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -88900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p075",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 7500,
+        "y_u": -96000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n18",
+      "build_bounds": [
+        {
+          "x_u": 4900,
+          "y_u": -98100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -98100
+        },
+        {
+          "x_u": 10100,
+          "y_u": -93900
+        },
+        {
+          "x_u": 4900,
+          "y_u": -93900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p076",
+      "district_key": "founders",
+      "activation_bundle": "b3",
+      "activation_order": 3,
+      "chunk_x": -1,
+      "chunk_y": -4,
+      "center": {
+        "x_u": -1500,
+        "y_u": -101000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b3_n19",
+      "build_bounds": [
+        {
+          "x_u": -4100,
+          "y_u": -103100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -103100
+        },
+        {
+          "x_u": 1100,
+          "y_u": -98900
+        },
+        {
+          "x_u": -4100,
+          "y_u": -98900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "neighborhood"
+      ]
+    },
+    {
+      "stable_key": "p077",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 13500,
+        "y_u": 6000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n00",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 3900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 3900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 8100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 8100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p078",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 4500,
+        "y_u": 11000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n01",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 8900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 8900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 13100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 13100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p079",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 13500,
+        "y_u": 16000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n02",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 13900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 13900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 18100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 18100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p080",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 4500,
+        "y_u": 21000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n03",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 18900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 18900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 23100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 23100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p081",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 13500,
+        "y_u": 26000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n04",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 23900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 23900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 28100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 28100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p082",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 0,
+      "center": {
+        "x_u": 4500,
+        "y_u": 31000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n05",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 28900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 28900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 33100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 33100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p083",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 13500,
+        "y_u": 36000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n06",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 33900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 33900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 38100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 38100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p084",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 4500,
+        "y_u": 41000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n07",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 38900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 38900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 43100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 43100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p085",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 13500,
+        "y_u": 46000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n08",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 43900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 43900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 48100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 48100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p086",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 4500,
+        "y_u": 51000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n09",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 48900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 48900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 53100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 53100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p087",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 13500,
+        "y_u": 56000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n10",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 53900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 53900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 58100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 58100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p088",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 1,
+      "center": {
+        "x_u": 4500,
+        "y_u": 61000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n11",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 58900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 58900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 63100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 63100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p089",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 13500,
+        "y_u": 66000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n12",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 63900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 63900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 68100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 68100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p090",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 4500,
+        "y_u": 71000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n13",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 68900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 68900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 73100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 73100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p091",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 13500,
+        "y_u": 76000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n14",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 73900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 73900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 78100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 78100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p092",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 4500,
+        "y_u": 81000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n15",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 78900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 78900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 83100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 83100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p093",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 13500,
+        "y_u": 86000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n16",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 83900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 83900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 88100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 88100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p094",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 2,
+      "center": {
+        "x_u": 4500,
+        "y_u": 91000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n17",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 88900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 88900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 93100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 93100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p095",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 3,
+      "center": {
+        "x_u": 13500,
+        "y_u": 96000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n18",
+      "build_bounds": [
+        {
+          "x_u": 10900,
+          "y_u": 93900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 93900
+        },
+        {
+          "x_u": 16100,
+          "y_u": 98100
+        },
+        {
+          "x_u": 10900,
+          "y_u": 98100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p096",
+      "district_key": "founders",
+      "activation_bundle": "b4",
+      "activation_order": 4,
+      "chunk_x": 0,
+      "chunk_y": 3,
+      "center": {
+        "x_u": 4500,
+        "y_u": 101000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b4_n19",
+      "build_bounds": [
+        {
+          "x_u": 1900,
+          "y_u": 98900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 98900
+        },
+        {
+          "x_u": 7100,
+          "y_u": 103100
+        },
+        {
+          "x_u": 1900,
+          "y_u": 103100
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p097",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 19500,
+        "y_u": -6000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n00",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -8100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -8100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -3900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -3900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p098",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 10500,
+        "y_u": -11000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n01",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -13100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -13100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -8900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -8900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p099",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 19500,
+        "y_u": -16000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n02",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -18100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -18100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -13900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -13900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p100",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 10500,
+        "y_u": -21000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n03",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -23100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -23100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -18900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -18900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p101",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 19500,
+        "y_u": -26000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n04",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -28100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -28100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -23900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -23900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p102",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -1,
+      "center": {
+        "x_u": 10500,
+        "y_u": -31000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n05",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -33100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -33100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -28900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -28900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p103",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 19500,
+        "y_u": -36000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n06",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -38100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -38100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -33900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -33900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p104",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 10500,
+        "y_u": -41000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n07",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -43100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -43100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -38900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -38900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p105",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 19500,
+        "y_u": -46000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n08",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -48100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -48100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -43900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -43900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p106",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 10500,
+        "y_u": -51000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n09",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -53100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -53100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -48900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -48900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p107",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 19500,
+        "y_u": -56000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n10",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -58100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -58100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -53900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -53900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p108",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -2,
+      "center": {
+        "x_u": 10500,
+        "y_u": -61000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n11",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -63100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -63100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -58900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -58900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p109",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 19500,
+        "y_u": -66000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n12",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -68100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -68100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -63900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -63900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p110",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 10500,
+        "y_u": -71000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n13",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -73100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -73100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -68900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -68900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p111",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 19500,
+        "y_u": -76000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n14",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -78100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -78100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -73900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -73900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p112",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 10500,
+        "y_u": -81000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n15",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -83100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -83100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -78900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -78900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p113",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 19500,
+        "y_u": -86000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n16",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -88100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -88100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -83900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -83900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p114",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 10500,
+        "y_u": -91000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n17",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -93100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -93100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -88900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -88900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p115",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -3,
+      "center": {
+        "x_u": 19500,
+        "y_u": -96000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n18",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -98100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -98100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -93900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -93900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p116",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -4,
+      "center": {
+        "x_u": 10500,
+        "y_u": -101000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n19",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -103100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -103100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -98900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -98900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p117",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -4,
+      "center": {
+        "x_u": 19500,
+        "y_u": -106000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n20",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -108100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -108100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -103900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -103900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p118",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -4,
+      "center": {
+        "x_u": 10500,
+        "y_u": -111000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n21",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -113100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -113100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -108900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -108900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p119",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -4,
+      "center": {
+        "x_u": 19500,
+        "y_u": -116000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n22",
+      "build_bounds": [
+        {
+          "x_u": 16900,
+          "y_u": -118100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -118100
+        },
+        {
+          "x_u": 22100,
+          "y_u": -113900
+        },
+        {
+          "x_u": 16900,
+          "y_u": -113900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    },
+    {
+      "stable_key": "p120",
+      "district_key": "founders",
+      "activation_bundle": "b5",
+      "activation_order": 5,
+      "chunk_x": 0,
+      "chunk_y": -4,
+      "center": {
+        "x_u": 10500,
+        "y_u": -121000
+      },
+      "terrain": "mountain-town",
+      "zone": "residential",
+      "frontage_node": "b5_n23",
+      "build_bounds": [
+        {
+          "x_u": 7900,
+          "y_u": -123100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -123100
+        },
+        {
+          "x_u": 13100,
+          "y_u": -118900
+        },
+        {
+          "x_u": 7900,
+          "y_u": -118900
+        }
+      ],
+      "scenic_tags": [
+        "mountain",
+        "edge"
+      ]
+    }
+  ],
+  "civic_anchors": [
+    {
+      "stable_key": "general-store",
+      "kind": "general_store",
+      "position": {
+        "x_u": -3000,
+        "y_u": -2500
+      },
+      "road_node": "main_c"
+    },
+    {
+      "stable_key": "market-hall",
+      "kind": "market_hall",
+      "position": {
+        "x_u": 3000,
+        "y_u": -2500
+      },
+      "road_node": "main_c"
+    },
+    {
+      "stable_key": "park",
+      "kind": "park",
+      "position": {
+        "x_u": 0,
+        "y_u": 5000
+      },
+      "road_node": "main_c"
+    }
+  ]
+}

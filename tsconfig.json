@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2023", "WebWorker"],
+    "types": ["node", "@cloudflare/workers-types"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "baseUrl": ".",
+    "paths": {
+      "@as/domain": ["packages/domain/src/index.ts"],
+      "@as/db": ["packages/db/src/index.ts"],
+      "@as/world-template": ["packages/world-template/src/index.ts"],
+      "@as/asset-manifest": ["packages/asset-manifest/src/index.ts"],
+      "@as/api-contract": ["packages/api-contract/src/index.ts"],
+      "@as/world-api": ["services/world-api/src/index.ts"],
+      "@as/jobs": ["services/jobs/src/index.ts"]
+    }
+  },
+  "include": ["packages/**/*.ts", "services/**/*.ts", "tests/**/*.ts", "scripts/**/*.ts", "vitest.config.ts"],
+  "exclude": ["**/node_modules", "**/dist", "**/.wrangler"]
+}
