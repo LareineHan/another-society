@@ -1,15 +1,22 @@
 openapi: 3.1.0
 info:
   title: Another Society API
-  version: 0.3.0
-  description: 'Foundation API contract for the Another Society v0.3 architecture. The server is authoritative for
-    identity, ownership, land, inventory, economy, canonical layouts, stays, and gifts.
+  version: 0.3.1
+  description: >
+    Foundation API contract for the Another Society v0.3 architecture. The server is authoritative for identity,
+    ownership, land, inventory, economy, canonical layouts, stays, and gifts.
 
 
-    Ordinary Visit is not globally live presence; choosing Stay commits public foreign presence. WORLD soft currency
-    is server-issued/earned and not directly funded by real-money purchases in the initial business model.
+    Ordinary Visit is not globally live presence; choosing Stay commits public foreign presence. WORLD soft currency is
+    server-issued/earned and not directly funded by real-money purchases in the initial business model.
 
-    '
+
+    v0.3.1 is additive only (new optional response fields, three read endpoints). Every mutation that can move
+    ownership/money/presence takes Idempotency-Key; a replay returns the original body with header `Idempotent-Replayed:
+    true`. Stable error codes: unauthorized, forbidden, not_found, validation_error, conflict, revision_conflict,
+    idempotency_key_required, idempotency_mismatch, plot_unavailable, reservation_invalid, already_has_home,
+    insufficient_funds, stay_not_allowed, stay_capacity_full, not_staying, gift_not_allowed, rate_limited,
+    account_inactive, internal_error.
 servers:
 - url: https://api.example.com/v1
   description: Production placeholder; replace during deployment.
@@ -33,22 +40,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AppleAuthRequest'
+              $ref: "#/components/schemas/AppleAuthRequest"
       responses:
-        '200':
+        "200":
           description: Authenticated existing account.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '201':
+                $ref: "#/components/schemas/AuthResponse"
+        "201":
           description: Created a new account.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/AuthResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /auth/refresh:
     post:
       tags:
@@ -68,66 +75,72 @@ paths:
                   type: string
                   minLength: 32
       responses:
-        '200':
+        "200":
           description: Session refreshed.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/AuthResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /auth/logout:
     post:
       tags:
       - Auth
       operationId: logout
       responses:
-        '204':
+        "204":
           description: Session revoked.
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+      parameters:
+      - in: query
+        name: all
+        schema:
+          type: boolean
+        description: Revoke every session of this account (all devices).
   /me:
     get:
       tags:
       - Account
       operationId: getMe
       responses:
-        '200':
+        "200":
           description: Current account and resident summary.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MeResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/MeResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /account:
     delete:
       tags:
       - Account
       operationId: requestAccountDeletion
       parameters:
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/IdempotencyKey"
       responses:
-        '202':
+        "202":
           description: Deletion requested; account removed from public discovery immediately.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MutationResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/MutationResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /resident:
     get:
       tags:
       - Resident
       operationId: getResident
       responses:
-        '200':
+        "200":
           description: Current resident profile.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Resident'
+                $ref: "#/components/schemas/Resident"
     patch:
       tags:
       - Resident
@@ -144,14 +157,14 @@ paths:
                   minLength: 1
                   maxLength: 64
       responses:
-        '200':
+        "200":
           description: Updated resident.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Resident'
-        '422':
-          $ref: '#/components/responses/ValidationError'
+                $ref: "#/components/schemas/Resident"
+        "422":
+          $ref: "#/components/responses/ValidationError"
   /resident/mini:
     put:
       tags:
@@ -170,33 +183,33 @@ paths:
                   type: object
                   additionalProperties: true
       responses:
-        '200':
+        "200":
           description: Updated Mini definition.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Resident'
-        '422':
-          $ref: '#/components/responses/ValidationError'
+                $ref: "#/components/schemas/Resident"
+        "422":
+          $ref: "#/components/responses/ValidationError"
   /world/bootstrap:
     get:
       tags:
       - World
       operationId: getWorldBootstrap
       responses:
-        '200':
+        "200":
           description: World, founding-city, feature flag, and asset-pack bootstrap data.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/WorldBootstrap'
+                $ref: "#/components/schemas/WorldBootstrap"
   /cities/{cityId}/chunks:
     get:
       tags:
       - World
       operationId: getCityChunks
       parameters:
-      - $ref: '#/components/parameters/CityId'
+      - $ref: "#/components/parameters/CityId"
       - in: query
         name: minX
         required: true
@@ -218,7 +231,7 @@ paths:
         schema:
           type: integer
       responses:
-        '200':
+        "200":
           description: Dynamic state for requested chunk window only.
           content:
             application/json:
@@ -231,9 +244,9 @@ paths:
                     type: array
                     maxItems: 100
                     items:
-                      $ref: '#/components/schemas/ChunkSummary'
-        '422':
-          $ref: '#/components/responses/ValidationError'
+                      $ref: "#/components/schemas/ChunkSummary"
+        "422":
+          $ref: "#/components/responses/ValidationError"
   /onboarding/plots:
     get:
       tags:
@@ -247,7 +260,7 @@ paths:
           type: string
           format: uuid
       responses:
-        '200':
+        "200":
           description: All currently active claimable plots in the onboarding city scope.
           content:
             application/json:
@@ -259,23 +272,23 @@ paths:
                   plots:
                     type: array
                     items:
-                      $ref: '#/components/schemas/PlotSummary'
+                      $ref: "#/components/schemas/PlotSummary"
   /plots/{plotId}/reserve:
     post:
       tags:
       - World
       operationId: reservePlot
       parameters:
-      - $ref: '#/components/parameters/PlotId'
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/PlotId"
+      - $ref: "#/components/parameters/IdempotencyKey"
       responses:
-        '201':
+        "201":
           description: Short-lived reservation created.
           content:
             application/json:
               schema:
                 allOf:
-                - $ref: '#/components/schemas/MutationResponse'
+                - $ref: "#/components/schemas/MutationResponse"
                 - type: object
                   properties:
                     reservation_id:
@@ -284,16 +297,16 @@ paths:
                     expires_at:
                       type: string
                       format: date-time
-        '409':
-          $ref: '#/components/responses/Conflict'
+        "409":
+          $ref: "#/components/responses/Conflict"
   /plots/{plotId}/claim:
     post:
       tags:
       - World
       operationId: claimPlot
       parameters:
-      - $ref: '#/components/parameters/PlotId'
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/PlotId"
+      - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -320,44 +333,44 @@ paths:
                   minimum: 0
                   maximum: 3
       responses:
-        '201':
+        "201":
           description: Plot claimed and starter property created atomically.
           content:
             application/json:
               schema:
                 allOf:
-                - $ref: '#/components/schemas/MutationResponse'
+                - $ref: "#/components/schemas/MutationResponse"
                 - type: object
                   properties:
                     property:
-                      $ref: '#/components/schemas/Property'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                      $ref: "#/components/schemas/Property"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /properties/{propertyId}:
     get:
       tags:
       - Property
       operationId: getProperty
       parameters:
-      - $ref: '#/components/parameters/PropertyId'
+      - $ref: "#/components/parameters/PropertyId"
       responses:
-        '200':
+        "200":
           description: Public/owner-authorized property state.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Property'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/Property"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /properties/{propertyId}/access:
     patch:
       tags:
       - Property
       operationId: updatePropertyAccess
       parameters:
-      - $ref: '#/components/parameters/PropertyId'
+      - $ref: "#/components/parameters/PropertyId"
       requestBody:
         required: true
         content:
@@ -385,36 +398,36 @@ paths:
                   - open
                   - closed
       responses:
-        '200':
+        "200":
           description: Access policy updated.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Property'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/Property"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /spaces/{spaceId}:
     get:
       tags:
       - Property
       operationId: getSpace
       parameters:
-      - $ref: '#/components/parameters/SpaceId'
+      - $ref: "#/components/parameters/SpaceId"
       responses:
-        '200':
+        "200":
           description: Space and canonical placements.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Space'
+                $ref: "#/components/schemas/Space"
   /spaces/{spaceId}/layout:
     put:
       tags:
       - Property
       operationId: replaceSpaceLayout
       parameters:
-      - $ref: '#/components/parameters/SpaceId'
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/SpaceId"
+      - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -432,27 +445,27 @@ paths:
                   type: array
                   maxItems: 500
                   items:
-                    $ref: '#/components/schemas/PlacementInput'
+                    $ref: "#/components/schemas/PlacementInput"
       responses:
-        '200':
+        "200":
           description: Canonical layout saved.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Space'
-        '409':
-          $ref: '#/components/responses/Conflict'
-        '422':
-          $ref: '#/components/responses/ValidationError'
+                $ref: "#/components/schemas/Space"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "422":
+          $ref: "#/components/responses/ValidationError"
   /properties/{propertyId}/visit:
     post:
       tags:
       - Social
       operationId: visitProperty
       parameters:
-      - $ref: '#/components/parameters/PropertyId'
+      - $ref: "#/components/parameters/PropertyId"
       responses:
-        '200':
+        "200":
           description: Visit authorized. Owner never receives visitor identity from ordinary visit history.
           content:
             application/json:
@@ -466,59 +479,69 @@ paths:
                   request_id:
                     type: string
                   property:
-                    $ref: '#/components/schemas/Property'
+                    $ref: "#/components/schemas/Property"
                   spaces:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Space'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+                      $ref: "#/components/schemas/Space"
+                  visit:
+                    type: object
+                    properties:
+                      qualified:
+                        type: boolean
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+      description: Transient, non-live observation. Call on entering and again after the dwell threshold (e.g. on leaving);
+        the server measures dwell and qualifies at most one visit per visitor/property/day. The owner only ever sees
+        anonymous aggregates.
   /spaces/{spaceId}/stay:
     post:
       tags:
       - Social
       operationId: startStay
       parameters:
-      - $ref: '#/components/parameters/SpaceId'
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/SpaceId"
+      - $ref: "#/components/parameters/IdempotencyKey"
       responses:
-        '201':
+        "201":
           description: Persistent asynchronous Stay started.
           content:
             application/json:
               schema:
                 allOf:
-                - $ref: '#/components/schemas/MutationResponse'
+                - $ref: "#/components/schemas/MutationResponse"
                 - type: object
                   properties:
                     stay_id:
                       type: string
                       format: uuid
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /stay:
     delete:
       tags:
       - Social
       operationId: endStay
       parameters:
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/IdempotencyKey"
       responses:
-        '200':
+        "200":
           description: Current active Stay ended.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MutationResponse'
+                $ref: "#/components/schemas/MutationResponse"
   /gifts:
     post:
       tags:
       - Social
       operationId: leaveGift
       parameters:
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -546,16 +569,16 @@ paths:
                 drop_y_u:
                   type: integer
       responses:
-        '201':
+        "201":
           description: Gift ownership transferred atomically and awaits recipient placement decision.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Gift'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/Gift"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /blocks:
     post:
       tags:
@@ -574,7 +597,7 @@ paths:
                   type: string
                   format: uuid
       responses:
-        '204':
+        "204":
           description: Resident blocked; prohibited active interactions are terminated.
   /blocks/{residentId}:
     delete:
@@ -582,9 +605,9 @@ paths:
       - Social
       operationId: unblockResident
       parameters:
-      - $ref: '#/components/parameters/ResidentId'
+      - $ref: "#/components/parameters/ResidentId"
       responses:
-        '204':
+        "204":
           description: Resident unblocked.
   /reports:
     post:
@@ -618,19 +641,19 @@ paths:
                   type: string
                   maxLength: 2000
       responses:
-        '201':
+        "201":
           description: Report accepted.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MutationResponse'
+                $ref: "#/components/schemas/MutationResponse"
   /inventory:
     get:
       tags:
       - Economy
       operationId: getInventory
       responses:
-        '200':
+        "200":
           description: Current canonical inventory.
           content:
             application/json:
@@ -642,19 +665,19 @@ paths:
                   items:
                     type: array
                     items:
-                      $ref: '#/components/schemas/ItemInstance'
+                      $ref: "#/components/schemas/ItemInstance"
   /wallet:
     get:
       tags:
       - Economy
       operationId: getWallet
       responses:
-        '200':
+        "200":
           description: Current materialized balance and currency code.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Wallet'
+                $ref: "#/components/schemas/Wallet"
   /catalog:
     get:
       tags:
@@ -667,7 +690,7 @@ paths:
           type: string
           format: uuid
       responses:
-        '200':
+        "200":
           description: Active system/city listings.
           content:
             application/json:
@@ -677,14 +700,14 @@ paths:
                   listings:
                     type: array
                     items:
-                      $ref: '#/components/schemas/StoreListing'
+                      $ref: "#/components/schemas/StoreListing"
   /store/purchases:
     post:
       tags:
       - Economy
       operationId: purchaseStoreListing
       parameters:
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -703,7 +726,7 @@ paths:
                   minimum: 1
                   maximum: 20
       responses:
-        '201':
+        "201":
           description: Purchase posted atomically. Server decides canonical price/balance.
           content:
             application/json:
@@ -721,39 +744,38 @@ paths:
                     type: string
                     format: uuid
                   wallet:
-                    $ref: '#/components/schemas/Wallet'
+                    $ref: "#/components/schemas/Wallet"
                   items:
                     type: array
                     items:
-                      $ref: '#/components/schemas/ItemInstance'
-        '409':
-          $ref: '#/components/responses/Conflict'
-        '422':
-          $ref: '#/components/responses/ValidationError'
+                      $ref: "#/components/schemas/ItemInstance"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "422":
+          $ref: "#/components/responses/ValidationError"
   /spaces/{spaceId}/stays/{residentId}:
     delete:
       tags:
       - Social
       operationId: sendStayerHome
-      description: Property owner ends a resident active Stay in this space. This is a safety/control action and
-        sends no message.
+      description: Property owner ends a resident active Stay in this space. This is a safety/control action and sends no message.
       parameters:
-      - $ref: '#/components/parameters/SpaceId'
-      - $ref: '#/components/parameters/ResidentId'
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/SpaceId"
+      - $ref: "#/components/parameters/ResidentId"
+      - $ref: "#/components/parameters/IdempotencyKey"
       responses:
-        '200':
+        "200":
           description: Stay ended and resident durable presence returned to primary home.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MutationResponse'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/MutationResponse"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /gifts/inbox:
     get:
       tags:
@@ -778,7 +800,7 @@ paths:
           maximum: 100
           default: 50
       responses:
-        '200':
+        "200":
           description: Gifts addressed to the authenticated resident.
           content:
             application/json:
@@ -790,15 +812,15 @@ paths:
                   items:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Gift'
+                      $ref: "#/components/schemas/Gift"
   /gifts/{giftId}/resolve:
     post:
       tags:
       - Social
       operationId: resolveGift
       parameters:
-      - $ref: '#/components/parameters/GiftId'
-      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: "#/components/parameters/GiftId"
+      - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -815,18 +837,138 @@ paths:
                   - put_away
                   - decline
       responses:
-        '200':
+        "200":
           description: Gift resolved atomically. Decline returns the item to giver inventory when possible.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Gift'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          $ref: '#/components/responses/Conflict'
+                $ref: "#/components/schemas/Gift"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+  /cities/{cityId}/roads:
+    get:
+      tags:
+      - World
+      operationId: getCityRoads
+      description: Active public road graph and civic anchors for client-side routing (A*). ETag is keyed to the city
+        activation revision; send If-None-Match to get 304.
+      parameters:
+      - $ref: "#/components/parameters/CityId"
+      - in: header
+        name: If-None-Match
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Active road graph.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoadGraph"
+        "304":
+          description: Unchanged since the given ETag.
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /wander:
+    get:
+      tags:
+      - Social
+      operationId: wander
+      description: A few publicly enterable homes, nearest-first with jitter. Not a ranking; never includes the caller,
+        blocked residents, or closed homes.
+      parameters:
+      - in: query
+        name: city_id
+        required: true
+        schema: &a2
+          type: string
+          format: uuid
+      - in: query
+        name: x_u
+        schema: &a1
+          type: integer
+      - in: query
+        name: y_u
+        schema: *a1
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 10
+          default: 5
+      responses:
+        "200":
+          description: Wander candidates.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - properties
+                properties:
+                  properties:
+                    type: array
+                    items:
+                      allOf:
+                      - $ref: "#/components/schemas/PropertyPreview"
+                      - type: object
+                        properties:
+                          center_x_u: *a1
+                          center_y_u: *a1
+        "422":
+          $ref: "#/components/responses/ValidationError"
+  /properties/{propertyId}/visits/summary:
+    get:
+      tags:
+      - Social
+      operationId: getVisitSummary
+      description: Owner-only anonymous visit aggregate for the last 7 days, in soft-language bands. Exact counts appear only
+        when the visits.exact_counts experiment flag is on. Never exposes visitor identity.
+      parameters:
+      - $ref: "#/components/parameters/PropertyId"
+      responses:
+        "200":
+          description: Soft-language aggregate.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - property_id
+                - band
+                - copy
+                - days
+                properties:
+                  property_id: *a2
+                  window_days: *a1
+                  band:
+                    type: string
+                    enum:
+                    - none
+                    - someone
+                    - a_few
+                    - busy
+                  copy:
+                    type: string
+                  count: *a1
+                  days:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        day:
+                          type: string
+                          format: date
+                        band:
+                          type: string
+                        count: *a1
+        "404":
+          $ref: "#/components/responses/NotFound"
 components:
   securitySchemes:
     bearerAuth:
@@ -842,6 +984,8 @@ components:
         type: string
         minLength: 16
         maxLength: 128
+      description: Scoped to (user, operation). Same key + same request replays the stored response; same key + different
+        request is 409 idempotency_mismatch.
     CityId:
       in: path
       name: cityId
@@ -890,31 +1034,31 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     Forbidden:
       description: Authenticated but operation is not allowed.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     NotFound:
       description: Resource not found or intentionally hidden.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     Conflict:
       description: State conflict, duplicate/race, stale revision, or idempotency mismatch.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
     ValidationError:
       description: Request failed validation/business rules.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: "#/components/schemas/ErrorResponse"
   schemas:
     AppleAuthRequest:
       type: object
@@ -970,7 +1114,16 @@ components:
           - deleting
           - deleted
         resident:
-          $ref: '#/components/schemas/Resident'
+          $ref: "#/components/schemas/Resident"
+        active_stay:
+          type: object
+          properties:
+            id: *a2
+            space_id: *a2
+            host_property_id: *a2
+            started_at:
+              type: string
+              format: date-time
     Resident:
       type: object
       required:
@@ -996,6 +1149,13 @@ components:
           - choosing_plot
           - claimed
           - complete
+        primary_home:
+          type: object
+          properties:
+            property_id: *a2
+            space_id: *a2
+            plot_id: *a2
+            city_id: *a2
     WorldBootstrap:
       type: object
       required:
@@ -1026,6 +1186,13 @@ components:
                 type: string
               status:
                 type: string
+              activation_revision:
+                type: integer
+                format: int64
+              theme:
+                type:
+                - string
+                - "null"
         asset_packs:
           type: array
           items:
@@ -1043,6 +1210,11 @@ components:
         features:
           type: object
           additionalProperties: true
+        coordinate_system:
+          type: object
+          properties:
+            units_per_tile: *a1
+            chunk_size_u: *a1
     ChunkSummary:
       type: object
       required:
@@ -1066,11 +1238,11 @@ components:
         plots:
           type: array
           items:
-            $ref: '#/components/schemas/PlotSummary'
+            $ref: "#/components/schemas/PlotSummary"
         properties:
           type: array
           items:
-            $ref: '#/components/schemas/PropertyPreview'
+            $ref: "#/components/schemas/PropertyPreview"
     PlotSummary:
       type: object
       required:
@@ -1107,6 +1279,21 @@ components:
         build_bounds:
           type: object
           additionalProperties: true
+        chunk_x: *a1
+        chunk_y: *a1
+        labels:
+          type: array
+          description: Quiet map facts, never a recommendation score.
+          items:
+            type: string
+            enum:
+            - closer_to_town
+            - near_park
+            - near_neighbors
+            - quieter_edge
+            - forest_side
+        reserved_by_me:
+          type: boolean
     PropertyPreview:
       type: object
       required:
@@ -1136,9 +1323,15 @@ components:
           enum:
           - open
           - closed
+        structure_x_u: *a1
+        structure_y_u: *a1
+        structure_rot_q:
+          type: integer
+          minimum: 0
+          maximum: 3
     Property:
       allOf:
-      - $ref: '#/components/schemas/PropertyPreview'
+      - $ref: "#/components/schemas/PropertyPreview"
       - type: object
         required:
         - owner_resident_id
@@ -1158,6 +1351,34 @@ components:
           revision:
             type: integer
             format: int64
+          property_type:
+            type: string
+            enum:
+            - home
+            - studio
+            - shop
+            - other
+          owner:
+            type: object
+            properties:
+              id: *a2
+              display_name:
+                type: string
+          space_ids:
+            type: array
+            items: *a2
+          viewer:
+            type: object
+            properties:
+              is_owner:
+                type: boolean
+              can_enter:
+                type: boolean
+              can_stay:
+                type: boolean
+          owner_away:
+            type: boolean
+            description: "Owner-only: true while the owner has an active foreign Stay."
     Space:
       type: object
       required:
@@ -1181,7 +1402,26 @@ components:
         placements:
           type: array
           items:
-            $ref: '#/components/schemas/Placement'
+            $ref: "#/components/schemas/Placement"
+        space_kind:
+          type: string
+        bounds:
+          type: object
+          properties:
+            minX: *a1
+            minY: *a1
+            maxX: *a1
+            maxY: *a1
+        stayers:
+          type: array
+          description: Active Stays (public presence). Residents in a block relationship with the viewer are omitted.
+          items:
+            $ref: "#/components/schemas/Stayer"
+        pending_gifts:
+          type: array
+          description: Owner only.
+          items:
+            $ref: "#/components/schemas/PendingGiftPreview"
     PlacementInput:
       type: object
       required:
@@ -1211,12 +1451,16 @@ components:
           default: 0
     Placement:
       allOf:
-      - $ref: '#/components/schemas/PlacementInput'
+      - $ref: "#/components/schemas/PlacementInput"
       - type: object
         properties:
           id:
             type: string
             format: uuid
+          asset_id:
+            type: string
+          definition_key:
+            type: string
     ItemInstance:
       type: object
       required:
@@ -1235,6 +1479,14 @@ components:
         provenance:
           type: object
           additionalProperties: true
+        definition_key: &a3
+          type: string
+        asset_id: &a4
+          type: string
+        category: &a5
+          type: string
+        gift_eligible: &a6
+          type: boolean
     Gift:
       type: object
       required:
@@ -1281,6 +1533,21 @@ components:
           type: integer
         drop_y_u:
           type: integer
+        resolved_at:
+          type: string
+          format: date-time
+        giver:
+          type: object
+          description: Intentional identity reveal. linkable=false after block or deletion.
+          properties:
+            display_name:
+              type: string
+            linkable:
+              type: boolean
+        asset_id:
+          type: string
+        definition_key:
+          type: string
     Wallet:
       type: object
       required:
@@ -1321,6 +1588,10 @@ components:
           - paused
           - sold_out
           - ended
+        definition_key: *a3
+        asset_id: *a4
+        category: *a5
+        gift_eligible: *a6
     MutationResponse:
       type: object
       required:
@@ -1350,5 +1621,95 @@ components:
         details:
           type: object
           additionalProperties: true
+    Stayer:
+      type: object
+      required:
+      - resident_id
+      - display_name
+      - mini_definition
+      - started_at
+      properties:
+        resident_id: *a2
+        display_name:
+          type: string
+        mini_definition:
+          type: object
+          additionalProperties: true
+        started_at:
+          type: string
+          format: date-time
+    PendingGiftPreview:
+      type: object
+      properties:
+        id: *a2
+        item_instance_id: *a2
+        drop_x_u: *a1
+        drop_y_u: *a1
+        asset_id:
+          type: string
+        definition_key:
+          type: string
+    RoadGraph:
+      type: object
+      required:
+      - city_id
+      - activation_revision
+      - nodes
+      - edges
+      - civic_anchors
+      properties:
+        city_id: *a2
+        activation_revision:
+          type: integer
+          format: int64
+        nodes:
+          type: array
+          items:
+            type: object
+            required:
+            - id
+            - x_u
+            - y_u
+            - node_kind
+            properties:
+              id: *a2
+              x_u: *a1
+              y_u: *a1
+              node_kind:
+                type: string
+        edges:
+          type: array
+          items:
+            type: object
+            required:
+            - id
+            - from_node_id
+            - to_node_id
+            - weight_milli
+            properties:
+              id: *a2
+              from_node_id: *a2
+              to_node_id: *a2
+              edge_kind:
+                type: string
+              weight_milli: *a1
+              geometry_points:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    x_u: *a1
+                    y_u: *a1
+        civic_anchors:
+          type: array
+          items:
+            type: object
+            properties:
+              id: *a2
+              kind:
+                type: string
+              x_u: *a1
+              y_u: *a1
+              road_node_id: *a2
 security:
 - bearerAuth: []

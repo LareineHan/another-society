@@ -80,22 +80,20 @@ export function economyRoutes() {
       if (!Number.isSafeInteger(total)) throw new DomainError('validation_error', 'Quantity too large.');
       const buyerWallet = await residentWalletId(tx, me);
 
-      let transactionId: string | null = null;
-      if (total > 0) {
-        const posted = await postLedger(tx, {
-          idempotencyKey: `store_purchase:${actor.userId}:${apiKey}`,
-          type: 'store_purchase',
-          actorResidentId: me,
-          relatedType: 'store_listing',
-          relatedId: l.id,
-          metadata: { quantity: body.quantity, unit_price: l.unit_price },
-          entries: [
-            { walletId: buyerWallet, amount: -total },
-            { walletId: l.seller_wallet_id, amount: total },
-          ],
-        });
-        transactionId = posted.transactionId;
-      }
+      // v0.1: every system listing has a positive price; a zero-price listing has no ledger movement to post.
+      if (total <= 0) throw new DomainError('conflict', 'This item is not available right now.');
+      const { transactionId } = await postLedger(tx, {
+        idempotencyKey: `store_purchase:${actor.userId}:${apiKey}`,
+        type: 'store_purchase',
+        actorResidentId: me,
+        relatedType: 'store_listing',
+        relatedId: l.id,
+        metadata: { quantity: body.quantity, unit_price: l.unit_price },
+        entries: [
+          { walletId: buyerWallet, amount: -total },
+          { walletId: l.seller_wallet_id, amount: total },
+        ],
+      });
       const items = await rows<{ id: string }>(tx, sql`
         INSERT INTO item_instances (definition_id, owner_resident_id, state, provenance)
         SELECT ${l.item_definition_id}, ${me}, 'inventory',

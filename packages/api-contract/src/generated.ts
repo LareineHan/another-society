@@ -269,6 +269,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
+        /** @description Transient, non-live observation. Call on entering and again after the dwell threshold (e.g. on leaving); the server measures dwell and qualifies at most one visit per visitor/property/day. The owner only ever sees anonymous aggregates. */
         post: operations["visitProperty"];
         delete?: never;
         options?: never;
@@ -485,6 +486,57 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/cities/{cityId}/roads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Active public road graph and civic anchors for client-side routing (A*). ETag is keyed to the city activation revision; send If-None-Match to get 304. */
+        get: operations["getCityRoads"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/wander": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description A few publicly enterable homes, nearest-first with jitter. Not a ranking; never includes the caller, blocked residents, or closed homes. */
+        get: operations["wander"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/properties/{propertyId}/visits/summary": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Owner-only anonymous visit aggregate for the last 7 days, in soft-language bands. Exact counts appear only when the visits.exact_counts experiment flag is on. Never exposes visitor identity. */
+        get: operations["getVisitSummary"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -509,6 +561,16 @@ export interface components {
             /** @enum {string} */
             account_status: "active" | "suspended" | "deleting" | "deleted";
             resident?: components["schemas"]["Resident"];
+            active_stay?: {
+                /** Format: uuid */
+                id?: string;
+                /** Format: uuid */
+                space_id?: string;
+                /** Format: uuid */
+                host_property_id?: string;
+                /** Format: date-time */
+                started_at?: string;
+            };
         };
         Resident: {
             /** Format: uuid */
@@ -520,6 +582,16 @@ export interface components {
             };
             /** @enum {string} */
             onboarding_state: "choosing_plot" | "claimed" | "complete";
+            primary_home?: {
+                /** Format: uuid */
+                property_id?: string;
+                /** Format: uuid */
+                space_id?: string;
+                /** Format: uuid */
+                plot_id?: string;
+                /** Format: uuid */
+                city_id?: string;
+            };
         };
         WorldBootstrap: {
             /** Format: uuid */
@@ -530,6 +602,9 @@ export interface components {
                 id: string;
                 display_name: string;
                 status: string;
+                /** Format: int64 */
+                activation_revision?: number;
+                theme?: string | null;
             }[];
             asset_packs: {
                 pack_id?: string;
@@ -540,6 +615,10 @@ export interface components {
             }[];
             features: {
                 [key: string]: unknown;
+            };
+            coordinate_system?: {
+                units_per_tile?: number;
+                chunk_size_u?: number;
             };
         };
         ChunkSummary: {
@@ -565,6 +644,11 @@ export interface components {
             build_bounds?: {
                 [key: string]: unknown;
             };
+            chunk_x?: number;
+            chunk_y?: number;
+            /** @description Quiet map facts, never a recommendation score. */
+            labels?: ("closer_to_town" | "near_park" | "near_neighbors" | "quieter_edge" | "forest_side")[];
+            reserved_by_me?: boolean;
         };
         PropertyPreview: {
             /** Format: uuid */
@@ -577,6 +661,9 @@ export interface components {
             has_active_stayers?: boolean;
             /** @enum {string} */
             away_access_mode: "open" | "closed";
+            structure_x_u?: number;
+            structure_y_u?: number;
+            structure_rot_q?: number;
         };
         Property: components["schemas"]["PropertyPreview"] & {
             /** Format: uuid */
@@ -586,6 +673,21 @@ export interface components {
             is_primary_home?: boolean;
             /** Format: int64 */
             revision: number;
+            /** @enum {string} */
+            property_type?: "home" | "studio" | "shop" | "other";
+            owner?: {
+                /** Format: uuid */
+                id?: string;
+                display_name?: string;
+            };
+            space_ids?: string[];
+            viewer?: {
+                is_owner?: boolean;
+                can_enter?: boolean;
+                can_stay?: boolean;
+            };
+            /** @description Owner-only: true while the owner has an active foreign Stay. */
+            owner_away?: boolean;
         };
         Space: {
             /** Format: uuid */
@@ -596,6 +698,17 @@ export interface components {
             layout_revision: number;
             visitor_capacity: number;
             placements: components["schemas"]["Placement"][];
+            space_kind?: string;
+            bounds?: {
+                minX?: number;
+                minY?: number;
+                maxX?: number;
+                maxY?: number;
+            };
+            /** @description Active Stays (public presence). Residents in a block relationship with the viewer are omitted. */
+            stayers?: components["schemas"]["Stayer"][];
+            /** @description Owner only. */
+            pending_gifts?: components["schemas"]["PendingGiftPreview"][];
         };
         PlacementInput: {
             /** Format: uuid */
@@ -611,6 +724,8 @@ export interface components {
         Placement: components["schemas"]["PlacementInput"] & {
             /** Format: uuid */
             id?: string;
+            asset_id?: string;
+            definition_key?: string;
         };
         ItemInstance: {
             /** Format: uuid */
@@ -621,6 +736,10 @@ export interface components {
             provenance?: {
                 [key: string]: unknown;
             };
+            definition_key?: string;
+            asset_id?: string;
+            category?: string;
+            gift_eligible?: boolean;
         };
         Gift: {
             /** Format: uuid */
@@ -641,6 +760,15 @@ export interface components {
             space_id: string;
             drop_x_u: number;
             drop_y_u: number;
+            /** Format: date-time */
+            resolved_at?: string;
+            /** @description Intentional identity reveal. linkable=false after block or deletion. */
+            giver?: {
+                display_name?: string;
+                linkable?: boolean;
+            };
+            asset_id?: string;
+            definition_key?: string;
         };
         Wallet: {
             currency_code: string;
@@ -658,6 +786,10 @@ export interface components {
             stock_quantity?: number;
             /** @enum {string} */
             status: "active" | "paused" | "sold_out" | "ended";
+            definition_key?: string;
+            asset_id?: string;
+            category?: string;
+            gift_eligible?: boolean;
         };
         MutationResponse: {
             request_id: string;
@@ -673,6 +805,62 @@ export interface components {
             details?: {
                 [key: string]: unknown;
             };
+        };
+        Stayer: {
+            /** Format: uuid */
+            resident_id: string;
+            display_name: string;
+            mini_definition: {
+                [key: string]: unknown;
+            };
+            /** Format: date-time */
+            started_at: string;
+        };
+        PendingGiftPreview: {
+            /** Format: uuid */
+            id?: string;
+            /** Format: uuid */
+            item_instance_id?: string;
+            drop_x_u?: number;
+            drop_y_u?: number;
+            asset_id?: string;
+            definition_key?: string;
+        };
+        RoadGraph: {
+            /** Format: uuid */
+            city_id: string;
+            /** Format: int64 */
+            activation_revision: number;
+            nodes: {
+                /** Format: uuid */
+                id: string;
+                x_u: number;
+                y_u: number;
+                node_kind: string;
+            }[];
+            edges: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                from_node_id: string;
+                /** Format: uuid */
+                to_node_id: string;
+                edge_kind?: string;
+                weight_milli: number;
+                geometry_points?: {
+                    x_u?: number;
+                    y_u?: number;
+                }[];
+            }[];
+            civic_anchors: {
+                /** Format: uuid */
+                id?: string;
+                kind?: string;
+                x_u?: number;
+                y_u?: number;
+                /** Format: uuid */
+                road_node_id?: string;
+            }[];
         };
     };
     responses: {
@@ -723,6 +911,7 @@ export interface components {
         };
     };
     parameters: {
+        /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
         IdempotencyKey: string;
         CityId: string;
         PlotId: string;
@@ -800,7 +989,10 @@ export interface operations {
     };
     logout: {
         parameters: {
-            query?: never;
+            query?: {
+                /** @description Revoke every session of this account (all devices). */
+                all?: boolean;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -842,6 +1034,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path?: never;
@@ -1015,6 +1208,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path: {
@@ -1045,6 +1239,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path: {
@@ -1167,6 +1362,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path: {
@@ -1218,16 +1414,21 @@ export interface operations {
                         request_id: string;
                         property: components["schemas"]["Property"];
                         spaces: components["schemas"]["Space"][];
+                        visit?: {
+                            qualified?: boolean;
+                        };
                     };
                 };
             };
             403: components["responses"]["Forbidden"];
+            404: components["responses"]["NotFound"];
         };
     };
     startStay: {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path: {
@@ -1257,6 +1458,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path?: never;
@@ -1279,6 +1481,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path?: never;
@@ -1458,6 +1661,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path?: never;
@@ -1496,6 +1700,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path: {
@@ -1549,6 +1754,7 @@ export interface operations {
         parameters: {
             query?: never;
             header: {
+                /** @description Scoped to (user, operation). Same key + same request replays the stored response; same key + different request is 409 idempotency_mismatch. */
                 "Idempotency-Key": components["parameters"]["IdempotencyKey"];
             };
             path: {
@@ -1577,6 +1783,106 @@ export interface operations {
             403: components["responses"]["Forbidden"];
             404: components["responses"]["NotFound"];
             409: components["responses"]["Conflict"];
+        };
+    };
+    getCityRoads: {
+        parameters: {
+            query?: never;
+            header?: {
+                "If-None-Match"?: string;
+            };
+            path: {
+                cityId: components["parameters"]["CityId"];
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Active road graph. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RoadGraph"];
+                };
+            };
+            /** @description Unchanged since the given ETag. */
+            304: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            404: components["responses"]["NotFound"];
+        };
+    };
+    wander: {
+        parameters: {
+            query: {
+                city_id: string;
+                x_u?: number;
+                y_u?: number;
+                limit?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Wander candidates. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        properties: (components["schemas"]["PropertyPreview"] & {
+                            center_x_u?: number;
+                            center_y_u?: number;
+                        })[];
+                    };
+                };
+            };
+            422: components["responses"]["ValidationError"];
+        };
+    };
+    getVisitSummary: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                propertyId: components["parameters"]["PropertyId"];
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Soft-language aggregate. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** Format: uuid */
+                        property_id: string;
+                        window_days?: number;
+                        /** @enum {string} */
+                        band: "none" | "someone" | "a_few" | "busy";
+                        copy: string;
+                        count?: number;
+                        days: {
+                            /** Format: date */
+                            day?: string;
+                            band?: string;
+                            count?: number;
+                        }[];
+                    };
+                };
+            };
+            404: components["responses"]["NotFound"];
         };
     };
 }

@@ -1,0 +1,20 @@
+# Admin moderation Worker. Put it on its own hostname behind a Cloudflare Access application.
+# Secrets: JWT_SECRET, TOKEN_ENCRYPTION_KEY, APPLE_PRIVATE_KEY (shared deps), plus vars below.
+name = "another-society-admin"
+main = "src/admin-entry.ts"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+[vars]
+ENVIRONMENT = "local"
+ASSET_BASE_URL = ""
+APPLE_CLIENT_ID = "com.implemon.anothersociety"
+ACCESS_TEAM_DOMAIN = "<team>.cloudflareaccess.com"
+ACCESS_AUD = "<access-application-aud>"
+ADMIN_EMAILS = "talk@implemon.com"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "00000000000000000000000000000000"
+localConnectionString = "postgres://postgres:postgres@127.0.0.1:5433/as_dev"

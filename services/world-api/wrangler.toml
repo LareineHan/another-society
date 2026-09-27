@@ -1,0 +1,66 @@
+# Resident API Worker. Secrets (never in git): JWT_SECRET, TOKEN_ENCRYPTION_KEY, APPLE_PRIVATE_KEY
+#   wrangler secret put JWT_SECRET --env production   (repeat per secret / env)
+name = "another-society-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Conservative per-invocation CPU cap (Blueprint §37); handlers are I/O-bound.
+[limits]
+cpu_ms = 50
+
+[observability]
+enabled = true
+
+[vars]
+ENVIRONMENT = "local"
+ASSET_BASE_URL = "http://localhost:8787/assets"
+APPLE_CLIENT_ID = "com.implemon.anothersociety"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "00000000000000000000000000000000" # replaced per env below
+localConnectionString = "postgres://postgres:postgres@127.0.0.1:5433/as_dev"
+
+# Rate-limit classes (Blueprint §61). Economy mutations are strictest.
+[[ratelimits]]
+name = "RL_AUTH"
+namespace_id = "7101"
+simple = { limit = 20, period = 60 }
+
+[[ratelimits]]
+name = "RL_ECONOMY"
+namespace_id = "7102"
+simple = { limit = 30, period = 60 }
+
+[[ratelimits]]
+name = "RL_SOCIAL"
+namespace_id = "7103"
+simple = { limit = 120, period = 60 }
+
+[[ratelimits]]
+name = "RL_WRITE"
+namespace_id = "7104"
+simple = { limit = 60, period = 60 }
+
+[env.staging]
+name = "another-society-api-staging"
+vars = { ENVIRONMENT = "staging", ASSET_BASE_URL = "https://assets-staging.example.com", APPLE_CLIENT_ID = "com.implemon.anothersociety" }
+hyperdrive = [{ binding = "HYPERDRIVE", id = "<staging-hyperdrive-id>" }]
+ratelimits = [
+  { name = "RL_AUTH", namespace_id = "7201", simple = { limit = 20, period = 60 } },
+  { name = "RL_ECONOMY", namespace_id = "7202", simple = { limit = 30, period = 60 } },
+  { name = "RL_SOCIAL", namespace_id = "7203", simple = { limit = 120, period = 60 } },
+  { name = "RL_WRITE", namespace_id = "7204", simple = { limit = 60, period = 60 } },
+]
+
+[env.production]
+name = "another-society-api-production"
+vars = { ENVIRONMENT = "production", ASSET_BASE_URL = "https://assets.example.com", APPLE_CLIENT_ID = "com.implemon.anothersociety" }
+hyperdrive = [{ binding = "HYPERDRIVE", id = "<production-hyperdrive-id>" }]
+ratelimits = [
+  { name = "RL_AUTH", namespace_id = "7301", simple = { limit = 20, period = 60 } },
+  { name = "RL_ECONOMY", namespace_id = "7302", simple = { limit = 30, period = 60 } },
+  { name = "RL_SOCIAL", namespace_id = "7303", simple = { limit = 120, period = 60 } },
+  { name = "RL_WRITE", namespace_id = "7304", simple = { limit = 60, period = 60 } },
+]

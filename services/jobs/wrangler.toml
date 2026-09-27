@@ -1,0 +1,29 @@
+# Jobs Worker: outbox publisher + maintenance crons, and the idempotent queue consumer.
+name = "another-society-jobs"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+[triggers]
+crons = ["* * * * *", "17 9 * * *"] # every minute; daily retention + reconciliation (UTC)
+
+[vars]
+ENVIRONMENT = "local"
+APPLE_CLIENT_ID = "com.implemon.anothersociety"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "00000000000000000000000000000000"
+localConnectionString = "postgres://postgres:postgres@127.0.0.1:5433/as_dev"
+
+[[queues.producers]]
+binding = "EVENTS"
+queue = "as-events"
+
+[[queues.consumers]]
+queue = "as-events"
+max_batch_size = 25
+max_batch_timeout = 5
+max_retries = 8
+dead_letter_queue = "as-events-dlq"
