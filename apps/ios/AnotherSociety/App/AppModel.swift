@@ -36,6 +36,10 @@ final class AppModel {
 
     func launch() async {
         await wireSignOut()
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["AS_RESET"] == "1" { tokenStore.save(nil) }
+        if DemoSeeder.name != nil { await DemoSeeder.run(self); return }
+        #endif
         guard api.hasSession else { phase = .signedOut; return }
         await refreshSession()
     }

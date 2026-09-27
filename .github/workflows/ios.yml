@@ -8,6 +8,9 @@ on:
     paths: ["apps/ios/**"]
   workflow_dispatch:
 
+permissions:
+  contents: write # only to publish screenshots to the ci-screenshots branch
+
 jobs:
   build:
     runs-on: macos-15
@@ -53,8 +56,20 @@ jobs:
           set -o pipefail
           UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k in sorted(d, reverse=True) if 'iOS' in k for x in d[k] if x['name'].startswith('iPhone')))")
           echo "simulator $UDID"
-          TEST_RUNNER_AS_REQUIRE_API=1 xcodebuild -project apps/ios/AnotherSociety.xcodeproj -scheme AnotherSociety \
+          TEST_RUNNER_AS_REQUIRE_API=1 TEST_RUNNER_AS_SHOT_DIR="$RUNNER_TEMP/shots" xcodebuild -project apps/ios/AnotherSociety.xcodeproj -scheme AnotherSociety \
             -destination "id=$UDID" -configuration Debug CODE_SIGNING_ALLOWED=NO test 2>&1 | python3 scripts/xcode-annotate.py
+      - name: Publish screenshots to the ci-screenshots branch
+        if: always() && github.event_name != 'pull_request'
+        run: |
+          [ -d "$RUNNER_TEMP/shots" ] || { echo "no screenshots"; exit 0; }
+          cd "$RUNNER_TEMP/shots"
+          ls -la
+          git init -q -b ci-screenshots
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          echo "Screenshots from ${GITHUB_SHA} (${GITHUB_RUN_ID})" > README.md
+          git add -A && git commit -qm "screenshots for ${GITHUB_SHA}"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-screenshots
       - name: API log on failure
         if: failure()
         run: tail -100 "$RUNNER_TEMP/api.log" || true

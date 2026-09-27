@@ -66,17 +66,31 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
         PRODUCT_BUNDLE_IDENTIFIER: com.implemon.anothersociety.tests
+  AnotherSocietyUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: AnotherSocietyUITests
+    dependencies:
+      - target: AnotherSociety
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.implemon.anothersociety.uitests
+        TEST_TARGET_NAME: AnotherSociety
 schemes:
   AnotherSociety:
     build:
       targets:
         AnotherSociety: all
         AnotherSocietyTests: [test]
+        AnotherSocietyUITests: [test]
     run:
       config: Debug
     test:
       config: Debug
       targets:
         - AnotherSocietyTests
+        - AnotherSocietyUITests
     archive:
       config: Release

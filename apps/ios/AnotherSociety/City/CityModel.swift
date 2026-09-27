@@ -12,6 +12,7 @@ final class CityModel {
     private(set) var loading = false
     var selectedPropertyId: EntityID?
     var traveling = false
+    private var didFocus = false
 
     init(size: CGSize = CGSize(width: 390, height: 700)) {
         scene = CityScene(size: size)
@@ -33,6 +34,10 @@ final class CityModel {
             scene.setChunks(chunks.chunks, highlightPropertyId: app.homePropertyId)
             if let res = app.resident, !traveling {
                 scene.placeMyMini(res.miniDefinition, at: miniPosition(app) ?? center)
+            }
+            if !didFocus {
+                didFocus = true
+                scene.focus(on: miniPosition(app) ?? center, animated: false)
             }
         } catch {
             app.banner = Copy.errorMessage(error)
