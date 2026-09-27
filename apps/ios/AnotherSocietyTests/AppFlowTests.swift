@@ -57,7 +57,8 @@ final class AppFlowTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(route.count, 3)
 
         // Room: owner loads, adds an item to the draft, saves (revision 1 -> 2).
-        let room = PropertyModel(propertyId: try XCTUnwrap(app.homePropertyId))
+        let homeId = try XCTUnwrap(app.homePropertyId)
+        let room = PropertyModel(propertyId: homeId)
         await room.load(app: app)
         XCTAssertTrue(room.isOwner)
         XCTAssertEqual(room.space?.layoutRevision, 1)
@@ -110,20 +111,24 @@ final class AppFlowTests: XCTestCase {
         XCTAssertEqual(hostRoom.space?.stayers?.map(\.displayName), ["Birch"])
 
         // Gift: buy a gift-safe item, choose a spot, leave it; host sees it and keeps it here.
-        let listing = try XCTUnwrap(try await guest.api.catalog(cityId: nil).first { $0.giftEligible == true })
+        let catalog = try await guest.api.catalog(cityId: nil)
+        let listing = try XCTUnwrap(catalog.first { $0.giftEligible == true })
         let bought = try await guest.api.purchase(listingId: listing.id, quantity: 1, key: IdempotencyKey.make())
-        visit.mode = .giving(try XCTUnwrap(bought.items.first?.id))
+        let giftItem = try XCTUnwrap(bought.items.first?.id)
+        visit.mode = .giving(giftItem)
         visit.dropSpot = WorldPoint(x: 4_000, y: 5_000)
         let left = await visit.leaveGift(app: guest)
         XCTAssertTrue(left, guest.banner ?? "")
         let inbox = try await host.api.giftInbox()
         XCTAssertEqual(inbox.first?.giver?.displayName, "Birch")
-        _ = try await host.api.resolveGift(try XCTUnwrap(inbox.first?.id), .keepHere, key: IdempotencyKey.make())
+        let giftId = try XCTUnwrap(inbox.first?.id)
+        _ = try await host.api.resolveGift(giftId, .keepHere, key: IdempotencyKey.make())
         await hostRoom.reloadSpace(app: host)
         XCTAssertEqual(hostRoom.space?.placements.count, 1)
 
         // Owner sends the guest home; the guest's durable Mini is back home.
-        await hostRoom.sendHome(try XCTUnwrap(hostRoom.space?.stayers?.first?.residentId), app: host)
+        let stayer = try XCTUnwrap(hostRoom.space?.stayers?.first?.residentId)
+        await hostRoom.sendHome(stayer, app: host)
         await guest.refreshMe()
         XCTAssertNil(guest.activeStay)
     }
