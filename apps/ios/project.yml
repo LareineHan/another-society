@@ -1,0 +1,66 @@
+# XcodeGen spec. Generate the project with:  brew install xcodegen && xcodegen generate
+# (The .xcodeproj is generated, not committed, so the spec stays the source of truth.)
+name: AnotherSociety
+options:
+  bundleIdPrefix: com.implemon
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+packages:
+  ASKit:
+    path: Packages/ASKit
+targets:
+  AnotherSociety:
+    type: application
+    platform: iOS
+    sources:
+      - path: AnotherSociety
+    dependencies:
+      - package: ASKit
+    info:
+      path: AnotherSociety/Info.plist
+      properties:
+        CFBundleDisplayName: Another Society
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        ITSAppUsesNonExemptEncryption: false
+        # Local development against `wrangler dev` on this Mac (http://127.0.0.1:8787).
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        ASAPIBaseURL: $(AS_API_BASE_URL)
+    entitlements:
+      path: AnotherSociety/AnotherSociety.entitlements
+      properties:
+        com.apple.developer.applesignin: [Default]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.implemon.anothersociety
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: "" # set your IMPLEMON team in Xcode (Signing & Capabilities)
+      configs:
+        Debug:
+          AS_API_BASE_URL: http://127.0.0.1:8787
+        Release:
+          AS_API_BASE_URL: https://api.anothersociety.example # DEV_PLACEHOLDER: production API host
+schemes:
+  AnotherSociety:
+    build:
+      targets:
+        AnotherSociety: all
+    run:
+      config: Debug
+    archive:
+      config: Release

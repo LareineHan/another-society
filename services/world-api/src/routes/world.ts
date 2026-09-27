@@ -76,6 +76,7 @@ function plotOut(p: PlotRow, extras: Record<string, unknown> = {}) {
     build_bounds: { points: p.build_bounds },
     chunk_x: p.chunk_x,
     chunk_y: p.chunk_y,
+    frontage_node_id: p.frontage_node_id,
     ...extras,
   };
 }
@@ -330,8 +331,8 @@ export function worldRoutes() {
     const db = await c.get('getDb')();
     const x = q.x_u ?? 0;
     const y = q.y_u ?? 0;
-    const candidates = await rows<{ id: string; plot_id: string; structure_asset_id: string; access_mode: 'open' | 'closed'; away_access_mode: 'open' | 'closed'; owner_away: boolean; has_active_stayers: boolean; center_x_u: number; center_y_u: number }>(db, sql`
-      SELECT pr.id, pr.plot_id, pr.structure_asset_id, pr.access_mode, pr.away_access_mode, pl.center_x_u, pl.center_y_u,
+    const candidates = await rows<{ id: string; plot_id: string; structure_asset_id: string; access_mode: 'open' | 'closed'; away_access_mode: 'open' | 'closed'; owner_away: boolean; has_active_stayers: boolean; center_x_u: number; center_y_u: number; frontage_node_id: string }>(db, sql`
+      SELECT pr.id, pr.plot_id, pr.structure_asset_id, pr.access_mode, pr.away_access_mode, pl.center_x_u, pl.center_y_u, pl.frontage_node_id,
              EXISTS (SELECT 1 FROM stays s WHERE s.resident_id = pr.owner_resident_id AND s.ended_at IS NULL) AS owner_away,
              EXISTS (SELECT 1 FROM stays s WHERE s.host_property_id = pr.id AND s.ended_at IS NULL) AS has_active_stayers
         FROM properties pr

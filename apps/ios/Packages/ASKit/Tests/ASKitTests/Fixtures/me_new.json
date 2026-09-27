@@ -1,0 +1,11 @@
+{
+  "user_id": "26baffe1-a888-46ac-b067-7684b9499aa9",
+  "account_status": "active",
+  "resident": {
+    "id": "5a240a20-fbc6-4493-8326-bc3619a9281e",
+    "display_name": "Newcomer",
+    "public_tag": "7KVRXP",
+    "mini_definition": {},
+    "onboarding_state": "choosing_plot"
+  }
+}

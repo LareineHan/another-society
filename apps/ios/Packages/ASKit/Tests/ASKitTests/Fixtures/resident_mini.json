@@ -1,0 +1,16 @@
+{
+  "id": "5a240a20-fbc6-4493-8326-bc3619a9281e",
+  "display_name": "Mori",
+  "public_tag": "7KVRXP",
+  "mini_definition": {
+    "body": "mini.body.a",
+    "hair": "mini.hair.bob",
+    "skin": "mini.skin.3",
+    "outfit": "mini.outfit.sweater",
+    "version": 1,
+    "accessory": "mini.acc.scarf",
+    "hair_color": "mini.haircolor.brown",
+    "outfit_color": "mini.palette.oat"
+  },
+  "onboarding_state": "choosing_plot"
+}

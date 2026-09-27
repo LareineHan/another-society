@@ -1,0 +1,224 @@
+{
+  "listings": [
+    {
+      "id": "ef22d23e-b563-4390-bfa1-377f21325b16",
+      "item_definition_id": "c19a32bb-f083-4228-8705-d85c0a95a678",
+      "unit_price": 28,
+      "status": "active",
+      "definition_key": "decor.clock.wall.001",
+      "asset_id": "decor.clock.wall.001",
+      "category": "clock",
+      "gift_eligible": false
+    },
+    {
+      "id": "ccaa833f-a6a7-4ef2-a897-0a9bf9b37ac9",
+      "item_definition_id": "6cdd8d4c-6033-4465-b22f-575b69e3e48f",
+      "unit_price": 30,
+      "status": "active",
+      "definition_key": "decor.lamp.paper.001",
+      "asset_id": "decor.lamp.paper.001",
+      "category": "lamp",
+      "gift_eligible": false
+    },
+    {
+      "id": "794affda-37bc-4697-be5c-024398e6ae78",
+      "item_definition_id": "1f9cbf4b-2fcd-4f91-bba1-ba49016e4443",
+      "unit_price": 35,
+      "status": "active",
+      "definition_key": "plant.monstera.001",
+      "asset_id": "plant.monstera.001",
+      "category": "plant",
+      "gift_eligible": false
+    },
+    {
+      "id": "9755fa0a-c6e9-4193-8a1d-69e2187e569a",
+      "item_definition_id": "832cf295-9940-43d5-862f-e4e927da172e",
+      "unit_price": 40,
+      "status": "active",
+      "definition_key": "furniture.chair.softwood.001",
+      "asset_id": "furniture.chair.softwood.001",
+      "category": "chair",
+      "gift_eligible": false
+    },
+    {
+      "id": "586ceab7-bb2a-4e61-a2bb-3237c55b6259",
+      "item_definition_id": "736e6ae3-aaba-4b00-b7c6-524c4636946a",
+      "unit_price": 50,
+      "status": "active",
+      "definition_key": "decor.rug.woven.001",
+      "asset_id": "decor.rug.woven.001",
+      "category": "rug",
+      "gift_eligible": false
+    },
+    {
+      "id": "a3ed1cd1-46a5-473f-a49c-eb1b61fac263",
+      "item_definition_id": "e751b655-44a0-4018-854b-c8e3f56f00bd",
+      "unit_price": 60,
+      "status": "active",
+      "definition_key": "furniture.bench.garden.001",
+      "asset_id": "furniture.bench.garden.001",
+      "category": "bench",
+      "gift_eligible": false
+    },
+    {
+      "id": "ce39d4e8-0045-4e1e-a5e7-70dc096deba7",
+      "item_definition_id": "8f97b45f-3686-4d46-a173-a8aec9373104",
+      "unit_price": 60,
+      "status": "active",
+      "definition_key": "furniture.table.round.001",
+      "asset_id": "furniture.table.round.001",
+      "category": "table",
+      "gift_eligible": false
+    },
+    {
+      "id": "c393d60e-35fb-47b2-9aee-684b43b888f0",
+      "item_definition_id": "a3df3fbe-f6ba-4a06-ad18-92418c1f7bca",
+      "unit_price": 70,
+      "status": "active",
+      "definition_key": "furniture.shelf.low.001",
+      "asset_id": "furniture.shelf.low.001",
+      "category": "shelf",
+      "gift_eligible": false
+    },
+    {
+      "id": "ce3b4956-1c40-4230-8b4b-fa996948f3f5",
+      "item_definition_id": "40b4e2d4-12b0-437b-9aea-98e50b4bd51e",
+      "unit_price": 90,
+      "status": "active",
+      "definition_key": "furniture.desk.writing.001",
+      "asset_id": "furniture.desk.writing.001",
+      "category": "desk",
+      "gift_eligible": false
+    },
+    {
+      "id": "1af2511f-2852-449e-9e22-784e95408cd0",
+      "item_definition_id": "13bb8cd9-176c-4daf-b13e-b8c79f57410b",
+      "unit_price": 110,
+      "status": "active",
+      "definition_key": "decor.stove.wood.001",
+      "asset_id": "decor.stove.wood.001",
+      "category": "stove",
+      "gift_eligible": false
+    },
+    {
+      "id": "88d8850f-8f1e-46ff-82f4-d2f605bce099",
+      "item_definition_id": "468cee81-0e5f-4db0-8d8f-986883dfece1",
+      "unit_price": 120,
+      "status": "active",
+      "definition_key": "furniture.bed.simple.001",
+      "asset_id": "furniture.bed.simple.001",
+      "category": "bed",
+      "gift_eligible": false
+    },
+    {
+      "id": "d2d56617-8ecb-4375-94ab-8e11532a11bd",
+      "item_definition_id": "ac95db9d-b56e-4aca-92b5-85bf58561e34",
+      "unit_price": 140,
+      "status": "active",
+      "definition_key": "furniture.sofa.small.001",
+      "asset_id": "furniture.sofa.small.001",
+      "category": "sofa",
+      "gift_eligible": false
+    },
+    {
+      "id": "05f76fc5-7195-4dad-893c-e9a03a223183",
+      "item_definition_id": "a89117a2-2a6d-4e4b-a7ca-31695fd70f6d",
+      "unit_price": 8,
+      "status": "active",
+      "definition_key": "gift.pebble.smooth.001",
+      "asset_id": "gift.pebble.smooth.001",
+      "category": "keepsake",
+      "gift_eligible": true
+    },
+    {
+      "id": "800af7ed-994a-41cb-b990-747b4a9b51ab",
+      "item_definition_id": "2b7ab7d5-6d87-4502-a821-b14679010807",
+      "unit_price": 10,
+      "status": "active",
+      "definition_key": "gift.teacup.001",
+      "asset_id": "gift.teacup.001",
+      "category": "tableware",
+      "gift_eligible": true
+    },
+    {
+      "id": "18306fb9-07c1-4585-b9f3-474c4bd67726",
+      "item_definition_id": "85f2e9f8-b2cc-48c2-bdea-40597ddb8488",
+      "unit_price": 12,
+      "status": "active",
+      "definition_key": "gift.candle.001",
+      "asset_id": "gift.candle.001",
+      "category": "light",
+      "gift_eligible": true
+    },
+    {
+      "id": "66689e0c-5882-4c91-909b-1c308fa775a3",
+      "item_definition_id": "1bff1589-d4bd-447f-b25d-bcfd9620e86d",
+      "unit_price": 14,
+      "status": "active",
+      "definition_key": "gift.book.stack.001",
+      "asset_id": "gift.book.stack.001",
+      "category": "book",
+      "gift_eligible": true
+    },
+    {
+      "id": "afb61ff4-d47b-475e-8dde-444cc4f76b82",
+      "item_definition_id": "d05e3d59-fba1-4f33-9f74-f790b8cf8b71",
+      "unit_price": 15,
+      "status": "active",
+      "definition_key": "gift.flower.vase.001",
+      "asset_id": "gift.flower.vase.001",
+      "category": "flower",
+      "gift_eligible": true
+    },
+    {
+      "id": "4ed3a981-09bb-44f7-b281-62c420e7c268",
+      "item_definition_id": "5523b5a3-28c7-465d-aafc-57c2c98e1b99",
+      "unit_price": 16,
+      "status": "active",
+      "definition_key": "gift.cushion.001",
+      "asset_id": "gift.cushion.001",
+      "category": "textile",
+      "gift_eligible": true
+    },
+    {
+      "id": "8b085229-810f-4c91-a3c8-18bf9a8bf9aa",
+      "item_definition_id": "174e95b1-89e9-4849-bf6d-440a2ac6fb04",
+      "unit_price": 18,
+      "status": "active",
+      "definition_key": "gift.fern.potted.001",
+      "asset_id": "gift.fern.potted.001",
+      "category": "plant",
+      "gift_eligible": true
+    },
+    {
+      "id": "93862186-275f-42d0-8301-e72a36289416",
+      "item_definition_id": "2f697bcd-a3ee-4ede-83a1-585bb173627f",
+      "unit_price": 20,
+      "status": "active",
+      "definition_key": "gift.lantern.small.001",
+      "asset_id": "gift.lantern.small.001",
+      "category": "light",
+      "gift_eligible": true
+    },
+    {
+      "id": "c55061d6-962b-4929-b7f8-9d332c4c03e9",
+      "item_definition_id": "5e318095-1228-4c5b-9075-21e612d71353",
+      "unit_price": 22,
+      "status": "active",
+      "definition_key": "gift.snow-globe.001",
+      "asset_id": "gift.snow-globe.001",
+      "category": "keepsake",
+      "gift_eligible": true
+    },
+    {
+      "id": "380cb404-f01f-4a9c-ac0e-f857d8d41c11",
+      "item_definition_id": "b06f8d6d-b651-461a-865b-60e4a9a42161",
+      "unit_price": 25,
+      "status": "active",
+      "definition_key": "gift.music-box.001",
+      "asset_id": "gift.music-box.001",
+      "category": "keepsake",
+      "gift_eligible": true
+    }
+  ]
+}

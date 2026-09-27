@@ -649,6 +649,11 @@ export interface components {
             /** @description Quiet map facts, never a recommendation score. */
             labels?: ("closer_to_town" | "near_park" | "near_neighbors" | "quieter_edge" | "forest_side")[];
             reserved_by_me?: boolean;
+            /**
+             * Format: uuid
+             * @description Public road node this plot fronts; route here for travel animation.
+             */
+            frontage_node_id?: string;
         };
         PropertyPreview: {
             /** Format: uuid */
@@ -1841,6 +1846,8 @@ export interface operations {
                         properties: (components["schemas"]["PropertyPreview"] & {
                             center_x_u?: number;
                             center_y_u?: number;
+                            /** Format: uuid */
+                            frontage_node_id?: string;
                         })[];
                     };
                 };

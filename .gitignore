@@ -12,3 +12,8 @@ coverage/
 apps/ios/**/xcuserdata/
 apps/ios/**/DerivedData/
 apps/ios/build/
+apps/ios/*.xcodeproj/
+apps/ios/AnotherSociety/Info.plist
+apps/ios/AnotherSociety/AnotherSociety.entitlements
+apps/ios/Packages/ASKit/.build/
+apps/ios/Packages/ASKit/.swiftpm/

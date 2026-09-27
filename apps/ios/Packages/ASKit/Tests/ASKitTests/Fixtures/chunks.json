@@ -1,0 +1,497 @@
+{
+  "chunks": [
+    {
+      "id": "68d20214-c382-4aaf-b202-2d628e2b7101",
+      "x": -1,
+      "y": -1,
+      "revision": 1,
+      "plots": [],
+      "properties": []
+    },
+    {
+      "id": "e4adf638-ac29-43f5-af96-bf25b39e46e3",
+      "x": 0,
+      "y": -1,
+      "revision": 1,
+      "plots": [],
+      "properties": []
+    },
+    {
+      "id": "6e927a26-2630-48bb-a92f-f896d155df6f",
+      "x": -1,
+      "y": 0,
+      "revision": 4,
+      "plots": [
+        {
+          "id": "c04af161-b549-48fc-aa4d-a9576d0e06fc",
+          "status": "vacant",
+          "center_x_u": -10500,
+          "center_y_u": 16000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -13100,
+                "y_u": 13900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 13900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 18100
+              },
+              {
+                "x_u": -13100,
+                "y_u": 18100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 0,
+          "frontage_node_id": "a1d6b100-d2d1-4526-b854-e321a29ee999"
+        },
+        {
+          "id": "0aeee251-1de4-43fb-b316-d48295513e46",
+          "status": "vacant",
+          "center_x_u": -19500,
+          "center_y_u": 21000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -22100,
+                "y_u": 18900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 18900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 23100
+              },
+              {
+                "x_u": -22100,
+                "y_u": 23100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 0,
+          "frontage_node_id": "c79dbfc1-6f97-473a-b9e7-7c8510c5d7bc"
+        },
+        {
+          "id": "4199a3a3-449e-4cc0-81d8-ffb984f37e30",
+          "status": "vacant",
+          "center_x_u": -10500,
+          "center_y_u": 26000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -13100,
+                "y_u": 23900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 23900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 28100
+              },
+              {
+                "x_u": -13100,
+                "y_u": 28100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 0,
+          "frontage_node_id": "ca3075b6-56ba-47ae-b672-97a444ffc481"
+        },
+        {
+          "id": "4bdd2760-c70f-4285-ac5e-c19f4e45391e",
+          "status": "vacant",
+          "center_x_u": -19500,
+          "center_y_u": 31000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -22100,
+                "y_u": 28900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 28900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 33100
+              },
+              {
+                "x_u": -22100,
+                "y_u": 33100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 0,
+          "frontage_node_id": "3c78545b-878e-4037-a542-5c97c6443e55"
+        },
+        {
+          "id": "990e60f5-a5ed-44de-9560-fe586058a6c5",
+          "status": "occupied",
+          "center_x_u": -10500,
+          "center_y_u": 6000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -13100,
+                "y_u": 3900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 3900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 8100
+              },
+              {
+                "x_u": -13100,
+                "y_u": 8100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 0,
+          "frontage_node_id": "632a5f73-dacf-4df7-8a57-f0b2d5d1db71"
+        },
+        {
+          "id": "a71cc6c8-e944-486b-a4ae-e62385e91772",
+          "status": "occupied",
+          "center_x_u": -19500,
+          "center_y_u": 11000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -22100,
+                "y_u": 8900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 8900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 13100
+              },
+              {
+                "x_u": -22100,
+                "y_u": 13100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 0,
+          "frontage_node_id": "5157dff2-b6fd-46c1-94cd-1512d731d652"
+        }
+      ],
+      "properties": [
+        {
+          "id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+          "plot_id": "990e60f5-a5ed-44de-9560-fe586058a6c5",
+          "structure_asset_id": "structure.home.cottage.a",
+          "access_mode": "open",
+          "away_access_mode": "open",
+          "structure_x_u": 0,
+          "structure_y_u": 0,
+          "structure_rot_q": 0,
+          "has_active_stayers": false
+        },
+        {
+          "id": "ee49ce44-e235-432a-b26a-bf9292fd1468",
+          "plot_id": "a71cc6c8-e944-486b-a4ae-e62385e91772",
+          "structure_asset_id": "structure.home.cottage.b",
+          "access_mode": "open",
+          "away_access_mode": "open",
+          "structure_x_u": 0,
+          "structure_y_u": 0,
+          "structure_rot_q": 0,
+          "has_active_stayers": false
+        }
+      ]
+    },
+    {
+      "id": "194d69c7-3f84-4187-b5f2-e16d1e368d2e",
+      "x": 0,
+      "y": 0,
+      "revision": 1,
+      "plots": [],
+      "properties": []
+    },
+    {
+      "id": "5283e550-ef58-4cdd-996f-842e8236533b",
+      "x": -1,
+      "y": 1,
+      "revision": 2,
+      "plots": [
+        {
+          "id": "cddb2489-e14d-4bf7-a966-a091a544f023",
+          "status": "vacant",
+          "center_x_u": -10500,
+          "center_y_u": 36000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -13100,
+                "y_u": 33900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 33900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 38100
+              },
+              {
+                "x_u": -13100,
+                "y_u": 38100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 1,
+          "frontage_node_id": "dc1d1a42-3df7-4edf-94f6-af698a47d15a"
+        },
+        {
+          "id": "98df3990-3a83-4f13-aec2-1a03c0ed2521",
+          "status": "vacant",
+          "center_x_u": -19500,
+          "center_y_u": 41000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -22100,
+                "y_u": 38900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 38900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 43100
+              },
+              {
+                "x_u": -22100,
+                "y_u": 43100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 1,
+          "frontage_node_id": "57202fe9-7774-4928-a91b-3feb27f713cd"
+        },
+        {
+          "id": "c3492e2d-5f22-4156-9b4e-3b06315198a2",
+          "status": "vacant",
+          "center_x_u": -10500,
+          "center_y_u": 46000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -13100,
+                "y_u": 43900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 43900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 48100
+              },
+              {
+                "x_u": -13100,
+                "y_u": 48100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 1,
+          "frontage_node_id": "d94d28ed-88c7-480b-947f-1786cdabf632"
+        },
+        {
+          "id": "27f245ed-b444-41f6-af1c-5ee851eb0bfa",
+          "status": "vacant",
+          "center_x_u": -19500,
+          "center_y_u": 51000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -22100,
+                "y_u": 48900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 48900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 53100
+              },
+              {
+                "x_u": -22100,
+                "y_u": 53100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 1,
+          "frontage_node_id": "0ffaeae8-c44f-4693-b6c4-68a4bf60687a"
+        },
+        {
+          "id": "da4a3065-508b-4811-89c0-c92438e788f9",
+          "status": "vacant",
+          "center_x_u": -10500,
+          "center_y_u": 56000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -13100,
+                "y_u": 53900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 53900
+              },
+              {
+                "x_u": -7900,
+                "y_u": 58100
+              },
+              {
+                "x_u": -13100,
+                "y_u": 58100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 1,
+          "frontage_node_id": "691f6e87-7897-46fa-bb58-21d404751f4c"
+        },
+        {
+          "id": "15de3655-9e0f-4d32-b566-ed241cb08610",
+          "status": "vacant",
+          "center_x_u": -19500,
+          "center_y_u": 61000,
+          "terrain_type": "mountain-town",
+          "zone_type": "residential",
+          "scenic_tags": [
+            "mountain",
+            "neighborhood"
+          ],
+          "build_bounds": {
+            "points": [
+              {
+                "x_u": -22100,
+                "y_u": 58900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 58900
+              },
+              {
+                "x_u": -16900,
+                "y_u": 63100
+              },
+              {
+                "x_u": -22100,
+                "y_u": 63100
+              }
+            ]
+          },
+          "chunk_x": -1,
+          "chunk_y": 1,
+          "frontage_node_id": "58f22b72-e450-46e7-8fdd-edc5b508d03e"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "id": "42eb3e7e-3a1b-49cb-b021-767780aa59fc",
+      "x": 0,
+      "y": 1,
+      "revision": 1,
+      "plots": [],
+      "properties": []
+    }
+  ]
+}

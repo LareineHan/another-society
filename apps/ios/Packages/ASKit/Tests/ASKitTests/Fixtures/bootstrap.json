@@ -1,0 +1,31 @@
+{
+  "world_id": "aeb74f7e-457f-4606-bffe-d37514d2302f",
+  "rules_version": 1,
+  "cities": [
+    {
+      "id": "3913cff9-31c0-4eb5-9daf-ac563174ceb3",
+      "display_name": "Founding City DEV",
+      "status": "open",
+      "activation_revision": 2,
+      "theme": "compact mountain town"
+    }
+  ],
+  "asset_packs": [
+    {
+      "pack_id": "core-dev",
+      "version": 1,
+      "manifest_url": "https://assets.example.test/packs/core-dev.v1.json",
+      "sha256": "1f286417dd72d8e1c1c23ea5293855e64169da71f64fdb3376a560c4abf5d5cf"
+    }
+  ],
+  "features": {
+    "creator.enabled": false,
+    "market.enabled": false,
+    "procurement.enabled": false,
+    "visits.exact_counts": false
+  },
+  "coordinate_system": {
+    "units_per_tile": 1000,
+    "chunk_size_u": 32000
+  }
+}

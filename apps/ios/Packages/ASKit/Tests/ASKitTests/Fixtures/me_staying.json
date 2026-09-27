@@ -1,0 +1,23 @@
+{
+  "user_id": "e824221e-614e-4029-94a2-916451d3aed6",
+  "account_status": "active",
+  "resident": {
+    "id": "86c4fdf6-31c8-464d-8d24-3687f2864a65",
+    "display_name": "Newcomer",
+    "public_tag": "CD4PSM",
+    "mini_definition": {},
+    "onboarding_state": "claimed",
+    "primary_home": {
+      "property_id": "ee49ce44-e235-432a-b26a-bf9292fd1468",
+      "space_id": "91fdcfb5-ba44-43dd-a31c-ce69ca7d5108",
+      "plot_id": "a71cc6c8-e944-486b-a4ae-e62385e91772",
+      "city_id": "3913cff9-31c0-4eb5-9daf-ac563174ceb3"
+    }
+  },
+  "active_stay": {
+    "id": "c405c8cd-91bf-4518-ae8e-9c2605716f1e",
+    "space_id": "680af04a-3107-459e-9ced-a908965132a7",
+    "host_property_id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+    "started_at": "2026-09-27T20:51:29.223Z"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+  "plot_id": "990e60f5-a5ed-44de-9560-fe586058a6c5",
+  "owner_resident_id": "5a240a20-fbc6-4493-8326-bc3619a9281e",
+  "property_type": "home",
+  "structure_asset_id": "structure.home.cottage.a",
+  "structure_x_u": 0,
+  "structure_y_u": 0,
+  "structure_rot_q": 0,
+  "access_mode": "open",
+  "away_access_mode": "open",
+  "allow_stays": true,
+  "stay_capacity": 4,
+  "is_primary_home": true,
+  "has_active_stayers": true,
+  "revision": 1,
+  "owner": {
+    "id": "5a240a20-fbc6-4493-8326-bc3619a9281e",
+    "display_name": "Mori"
+  },
+  "space_ids": [
+    "680af04a-3107-459e-9ced-a908965132a7"
+  ],
+  "viewer": {
+    "is_owner": true,
+    "can_enter": true,
+    "can_stay": false
+  },
+  "owner_away": false
+}

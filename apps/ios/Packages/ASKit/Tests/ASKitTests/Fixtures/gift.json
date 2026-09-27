@@ -1,0 +1,13 @@
+{
+  "request_id": "req_n7rkey5cv2uf",
+  "id": "25f26227-2837-49ae-8249-de6fb9e92b4e",
+  "giver_resident_id": "86c4fdf6-31c8-464d-8d24-3687f2864a65",
+  "recipient_resident_id": "5a240a20-fbc6-4493-8326-bc3619a9281e",
+  "item_instance_id": "458a9600-689a-4f05-9cae-d3ea56dbafb7",
+  "status": "pending_placement",
+  "created_at": "2026-09-27T20:51:29.250Z",
+  "property_id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+  "space_id": "680af04a-3107-459e-9ced-a908965132a7",
+  "drop_x_u": 5000,
+  "drop_y_u": 5000
+}

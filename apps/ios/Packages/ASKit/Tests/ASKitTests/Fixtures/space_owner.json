@@ -1,0 +1,55 @@
+{
+  "id": "680af04a-3107-459e-9ced-a908965132a7",
+  "property_id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+  "space_kind": "main",
+  "layout_revision": 2,
+  "visitor_capacity": 8,
+  "bounds": {
+    "minX": 0,
+    "minY": 0,
+    "maxX": 12000,
+    "maxY": 12000
+  },
+  "placements": [
+    {
+      "id": "1640d93f-5ad3-417c-a746-772eba2b3acb",
+      "item_instance_id": "88c5788d-3007-494a-a5d0-ba9e40b458f6",
+      "x_u": 3000,
+      "y_u": 4000,
+      "rotation_q": 1,
+      "scale_milli": 1000,
+      "layer": 0,
+      "definition_key": "furniture.table.round.001",
+      "asset_id": "furniture.table.round.001"
+    },
+    {
+      "id": "6e742de2-9ebd-44e1-bd99-90f2f64d7ee0",
+      "item_instance_id": "cc9927ab-e0a1-4015-8a3d-2ce577e3159a",
+      "x_u": 8000,
+      "y_u": 2000,
+      "rotation_q": 0,
+      "scale_milli": 1000,
+      "layer": 1,
+      "definition_key": "furniture.bed.simple.001",
+      "asset_id": "furniture.bed.simple.001"
+    }
+  ],
+  "stayers": [
+    {
+      "resident_id": "86c4fdf6-31c8-464d-8d24-3687f2864a65",
+      "display_name": "Newcomer",
+      "mini_definition": {},
+      "started_at": "2026-09-27T20:51:29.223Z"
+    }
+  ],
+  "pending_gifts": [
+    {
+      "id": "25f26227-2837-49ae-8249-de6fb9e92b4e",
+      "item_instance_id": "458a9600-689a-4f05-9cae-d3ea56dbafb7",
+      "drop_x_u": 5000,
+      "drop_y_u": 5000,
+      "asset_id": "gift.pebble.smooth.001",
+      "definition_key": "gift.pebble.smooth.001"
+    }
+  ]
+}

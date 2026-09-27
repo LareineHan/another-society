@@ -1,0 +1,15 @@
+{
+  "properties": [
+    {
+      "id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+      "plot_id": "990e60f5-a5ed-44de-9560-fe586058a6c5",
+      "structure_asset_id": "structure.home.cottage.a",
+      "access_mode": "open",
+      "away_access_mode": "open",
+      "center_x_u": -10500,
+      "center_y_u": 6000,
+      "frontage_node_id": "632a5f73-dacf-4df7-8a57-f0b2d5d1db71",
+      "has_active_stayers": true
+    }
+  ]
+}

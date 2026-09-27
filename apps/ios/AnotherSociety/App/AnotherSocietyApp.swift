@@ -1,0 +1,14 @@
+import SwiftUI
+
+@main
+struct AnotherSocietyApp: App {
+    @State private var app = AppModel()
+
+    var body: some Scene {
+        WindowGroup {
+            RootView()
+                .environment(app)
+                .task { await app.launch() }
+        }
+    }
+}

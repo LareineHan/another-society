@@ -1,0 +1,34 @@
+name: ios
+
+on:
+  push:
+    branches: [main]
+    paths: ["apps/ios/**", ".github/workflows/ios.yml", "scripts/xcode-annotate.py"]
+  pull_request:
+    paths: ["apps/ios/**"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+          brew install xcodegen
+      - name: ASKit unit tests (models vs real API fixtures, routing, geometry, client)
+        run: |
+          set -o pipefail
+          cd apps/ios/Packages/ASKit
+          swift test 2>&1 | python3 "$GITHUB_WORKSPACE/scripts/xcode-annotate.py"
+      - name: Generate Xcode project
+        run: cd apps/ios && xcodegen generate
+      - name: Build app (iOS Simulator, unsigned)
+        run: |
+          set -o pipefail
+          xcodebuild -project apps/ios/AnotherSociety.xcodeproj -scheme AnotherSociety \
+            -destination 'generic/platform=iOS Simulator' -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | python3 scripts/xcode-annotate.py

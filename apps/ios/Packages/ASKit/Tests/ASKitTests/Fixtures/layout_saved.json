@@ -1,0 +1,40 @@
+{
+  "request_id": "req_n6wai4omgnpo",
+  "id": "680af04a-3107-459e-9ced-a908965132a7",
+  "property_id": "b59a1ec7-4ca2-48d4-9a76-5eefd4fc98e4",
+  "space_kind": "main",
+  "layout_revision": 2,
+  "visitor_capacity": 8,
+  "bounds": {
+    "minX": 0,
+    "minY": 0,
+    "maxX": 12000,
+    "maxY": 12000
+  },
+  "placements": [
+    {
+      "id": "1640d93f-5ad3-417c-a746-772eba2b3acb",
+      "item_instance_id": "88c5788d-3007-494a-a5d0-ba9e40b458f6",
+      "x_u": 3000,
+      "y_u": 4000,
+      "rotation_q": 1,
+      "scale_milli": 1000,
+      "layer": 0,
+      "definition_key": "furniture.table.round.001",
+      "asset_id": "furniture.table.round.001"
+    },
+    {
+      "id": "6e742de2-9ebd-44e1-bd99-90f2f64d7ee0",
+      "item_instance_id": "cc9927ab-e0a1-4015-8a3d-2ce577e3159a",
+      "x_u": 8000,
+      "y_u": 2000,
+      "rotation_q": 0,
+      "scale_milli": 1000,
+      "layer": 1,
+      "definition_key": "furniture.bed.simple.001",
+      "asset_id": "furniture.bed.simple.001"
+    }
+  ],
+  "stayers": [],
+  "pending_gifts": []
+}

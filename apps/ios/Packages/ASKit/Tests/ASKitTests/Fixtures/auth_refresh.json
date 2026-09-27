@@ -1,0 +1,7 @@
+{
+  "access_token": "fixture.access.token",
+  "refresh_token": "fixture-refresh-token-fixture-refresh-token",
+  "expires_in": 900,
+  "user_id": "26baffe1-a888-46ac-b067-7684b9499aa9",
+  "is_new_account": false
+}

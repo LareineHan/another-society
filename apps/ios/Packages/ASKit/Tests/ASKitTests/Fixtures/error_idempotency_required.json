@@ -1,0 +1,5 @@
+{
+  "request_id": "req_jtibh6o4lddl",
+  "code": "idempotency_key_required",
+  "message": "An Idempotency-Key header (16–128 visible ASCII chars) is required."
+}

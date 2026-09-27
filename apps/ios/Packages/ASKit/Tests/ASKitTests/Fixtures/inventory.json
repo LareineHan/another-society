@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "88c5788d-3007-494a-a5d0-ba9e40b458f6",
+      "definition_id": "8f97b45f-3686-4d46-a173-a8aec9373104",
+      "state": "inventory",
+      "provenance": {
+        "source": "starter_kit"
+      },
+      "definition_key": "furniture.table.round.001",
+      "asset_id": "furniture.table.round.001",
+      "category": "table",
+      "gift_eligible": false
+    },
+    {
+      "id": "aa4acf93-16e4-42a7-8ff8-271aae69994a",
+      "definition_id": "832cf295-9940-43d5-862f-e4e927da172e",
+      "state": "inventory",
+      "provenance": {
+        "source": "starter_kit"
+      },
+      "definition_key": "furniture.chair.softwood.001",
+      "asset_id": "furniture.chair.softwood.001",
+      "category": "chair",
+      "gift_eligible": false
+    },
+    {
+      "id": "af344277-015d-42e3-9dc9-52a7a4198180",
+      "definition_id": "6cdd8d4c-6033-4465-b22f-575b69e3e48f",
+      "state": "inventory",
+      "provenance": {
+        "source": "starter_kit"
+      },
+      "definition_key": "decor.lamp.paper.001",
+      "asset_id": "decor.lamp.paper.001",
+      "category": "lamp",
+      "gift_eligible": false
+    },
+    {
+      "id": "cc9927ab-e0a1-4015-8a3d-2ce577e3159a",
+      "definition_id": "468cee81-0e5f-4db0-8d8f-986883dfece1",
+      "state": "inventory",
+      "provenance": {
+        "source": "starter_kit"
+      },
+      "definition_key": "furniture.bed.simple.001",
+      "asset_id": "furniture.bed.simple.001",
+      "category": "bed",
+      "gift_eligible": false
+    }
+  ]
+}

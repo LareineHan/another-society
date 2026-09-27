@@ -920,6 +920,9 @@ paths:
                         properties:
                           center_x_u: *a1
                           center_y_u: *a1
+                          frontage_node_id:
+                            type: string
+                            format: uuid
         "422":
           $ref: "#/components/responses/ValidationError"
   /properties/{propertyId}/visits/summary:
@@ -1294,6 +1297,10 @@ components:
             - forest_side
         reserved_by_me:
           type: boolean
+        frontage_node_id:
+          type: string
+          format: uuid
+          description: Public road node this plot fronts; route here for travel animation.
     PropertyPreview:
       type: object
       required:

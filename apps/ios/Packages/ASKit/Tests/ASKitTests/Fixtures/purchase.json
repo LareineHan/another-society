@@ -1,0 +1,24 @@
+{
+  "request_id": "req_3aifcxl5imw2",
+  "transaction_id": "a77d170a-582c-45be-ac56-7fba5245826c",
+  "wallet": {
+    "currency_code": "WORLD",
+    "balance": 492
+  },
+  "items": [
+    {
+      "id": "458a9600-689a-4f05-9cae-d3ea56dbafb7",
+      "definition_id": "a89117a2-2a6d-4e4b-a7ca-31695fd70f6d",
+      "state": "inventory",
+      "provenance": {
+        "source": "store",
+        "listing_id": "05f76fc5-7195-4dad-893c-e9a03a223183",
+        "transaction_id": "a77d170a-582c-45be-ac56-7fba5245826c"
+      },
+      "definition_key": "gift.pebble.smooth.001",
+      "asset_id": "gift.pebble.smooth.001",
+      "category": "keepsake",
+      "gift_eligible": true
+    }
+  ]
+}
