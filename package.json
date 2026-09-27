@@ -21,6 +21,12 @@
   },
   "devDependencies": {
     "@apidevtools/swagger-parser": "^13.1.0",
+    "@as/api-contract": "workspace:^",
+    "@as/db": "workspace:^",
+    "@as/domain": "workspace:^",
+    "@as/jobs": "workspace:^",
+    "@as/world-api": "workspace:^",
+    "@as/world-template": "workspace:^",
     "@cloudflare/workers-types": "^5.20260927.1",
     "@types/node": "^22",
     "@types/pg": "^8.23.1",
