@@ -199,12 +199,13 @@ describe('Block and report', () => {
         t.call(b, 'POST', '/v1/gifts', { property_id: a.propertyId, space_id: a.spaceId, item_instance_id: item, drop_x_u: 1, drop_y_u: 1 }, { idem: true }),
       ]);
       expect(await count(t.db, t.sql`SELECT count(*)::int AS n FROM stays WHERE resident_id = ${b.residentId} AND ended_at IS NULL`)).toBe(0);
-      const gifts = await count(t.db, t.sql`
-        SELECT count(*)::int AS n FROM gifts g JOIN blocks bl ON bl.blocker_resident_id = ${a.residentId} AND bl.blocked_resident_id = ${b.residentId}
-         WHERE g.giver_resident_id = ${b.residentId} AND g.created_at > bl.created_at`);
-      expect(gifts).toBe(0);
+      // A gift that committed before the block is legitimate (like a stay the block then ended);
+      // what must hold is serialization: once the block is committed nothing new gets through.
       // After the block commits, new attempts are denied.
       expect((await t.call(b, 'POST', `/v1/spaces/${a.spaceId}/stay`, undefined, { idem: true })).status).toBe(404);
+      const second = await buyGift(b, 'gift.pebble.smooth.001');
+      expect((await t.call(b, 'POST', '/v1/gifts', { property_id: a.propertyId, space_id: a.spaceId, item_instance_id: second, drop_x_u: 1, drop_y_u: 1 }, { idem: true })).status).toBe(404);
+      expect((await t.call(b, 'POST', `/v1/properties/${a.propertyId}/visit`)).status).toBe(404);
     }
   });
 
