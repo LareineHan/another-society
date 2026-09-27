@@ -15,7 +15,7 @@ final class PropertyScene: SKScene {
     var onTapGift: ((EntityID) -> Void)?
     var onTapStayer: ((EntityID) -> Void)?
 
-    private(set) var bounds = SpaceBounds.default
+    private(set) var roomBounds = SpaceBounds.default
     let projection = Projection(pointsPerUnit: 0.028, verticalSquash: 0.72)
     private let cam = SKCameraNode()
     private let room = SKNode()
@@ -47,21 +47,21 @@ final class PropertyScene: SKScene {
     }
 
     private func fitCamera() {
-        let roomSize = projection.size(bounds.maxX - bounds.minX, bounds.maxY - bounds.minY)
+        let roomSize = projection.size(roomBounds.maxX - roomBounds.minX, roomBounds.maxY - roomBounds.minY)
         guard size.width > 0, roomSize.width > 0 else { return }
         let scale = max((roomSize.width + 60) / size.width, (roomSize.height + 200) / max(1, size.height))
         cam.setScale(max(0.6, scale))
-        let c = projection.scenePoint(WorldPoint(x: (bounds.minX + bounds.maxX) / 2, y: (bounds.minY + bounds.maxY) / 2))
+        let c = projection.scenePoint(WorldPoint(x: (roomBounds.minX + roomBounds.maxX) / 2, y: (roomBounds.minY + roomBounds.maxY) / 2))
         cam.position = CGPoint(x: c.x, y: c.y + 30)
     }
 
     // MARK: Rendering
 
     func renderRoom(bounds: SpaceBounds, structureAssetId: String) {
-        self.bounds = bounds
+        self.roomBounds = bounds
         room.removeAllChildren()
-        let origin = projection.scenePoint(WorldPoint(x: bounds.minX, y: bounds.minY))
-        let size = projection.size(bounds.maxX - bounds.minX, bounds.maxY - bounds.minY)
+        let origin = projection.scenePoint(WorldPoint(x: roomBounds.minX, y: roomBounds.minY))
+        let size = projection.size(roomBounds.maxX - roomBounds.minX, roomBounds.maxY - roomBounds.minY)
         let floorRect = CGRect(origin: origin, size: size)
 
         let back = SKShapeNode(rect: CGRect(x: floorRect.minX, y: floorRect.maxY, width: floorRect.width, height: 120), cornerRadius: 4)
@@ -84,11 +84,11 @@ final class PropertyScene: SKScene {
         floor.lineWidth = 2
         floor.name = "floor"
         room.addChild(floor)
-        var x = bounds.minX + 2_000
-        while x < bounds.maxX {
+        var x = roomBounds.minX + 2_000
+        while x < roomBounds.maxX {
             let path = CGMutablePath()
-            path.move(to: projection.scenePoint(WorldPoint(x: x, y: bounds.minY)))
-            path.addLine(to: projection.scenePoint(WorldPoint(x: x, y: bounds.maxY)))
+            path.move(to: projection.scenePoint(WorldPoint(x: x, y: roomBounds.minY)))
+            path.addLine(to: projection.scenePoint(WorldPoint(x: x, y: roomBounds.maxY)))
             let board = SKShapeNode(path: path)
             board.strokeColor = Theme.UI.floorLine.withAlphaComponent(0.6)
             board.lineWidth = 1
@@ -116,9 +116,9 @@ final class PropertyScene: SKScene {
     /// Stayers (public presence), plus pending gifts for the owner, plus my own local Mini.
     func renderPeople(stayers: [Stayer], me: MiniDefinition?, meAtDoor: Bool, pendingGifts: [PendingGiftPreview]) {
         people.removeAllChildren()
-        let spacing = (bounds.maxX - bounds.minX) / max(2, stayers.count + 1)
+        let spacing = (roomBounds.maxX - roomBounds.minX) / max(2, stayers.count + 1)
         for (i, s) in stayers.enumerated() {
-            let p = WorldPoint(x: bounds.minX + spacing * (i + 1), y: bounds.maxY - 1_600 - (i % 2) * 900)
+            let p = WorldPoint(x: roomBounds.minX + spacing * (i + 1), y: roomBounds.maxY - 1_600 - (i % 2) * 900)
             let n = MiniSprite.node(s.miniDefinition, scale: 1.4)
             n.name = "stayer:\(s.residentId)"
             n.position = projection.scenePoint(p)
@@ -133,8 +133,8 @@ final class PropertyScene: SKScene {
         }
         if let me {
             let p = meAtDoor
-                ? WorldPoint(x: (bounds.minX + bounds.maxX) / 2, y: bounds.minY + 900)
-                : WorldPoint(x: bounds.minX + 2_500, y: (bounds.minY + bounds.maxY) / 2)
+                ? WorldPoint(x: (roomBounds.minX + roomBounds.maxX) / 2, y: roomBounds.minY + 900)
+                : WorldPoint(x: roomBounds.minX + 2_500, y: (roomBounds.minY + roomBounds.maxY) / 2)
             let n = MiniSprite.node(me, scale: 1.4)
             n.position = projection.scenePoint(p)
             n.zPosition = projection.zPosition(p) + 1
@@ -216,7 +216,7 @@ final class PropertyScene: SKScene {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard interaction == .edit, let d = dragging, let t = touches.first, let n = itemNodes[d.id] else { return }
         let loc = t.location(in: self)
-        let w = bounds.clamp(projection.worldPoint(CGPoint(x: loc.x + d.offset.x, y: loc.y + d.offset.y)).snapped())
+        let w = roomBounds.clamp(projection.worldPoint(CGPoint(x: loc.x + d.offset.x, y: loc.y + d.offset.y)).snapped())
         n.position = projection.scenePoint(w)
         n.zPosition = projection.zPosition(w)
     }
@@ -227,12 +227,12 @@ final class PropertyScene: SKScene {
         switch interaction {
         case .edit:
             if let d = dragging, let n = itemNodes[d.id] {
-                onMove?(d.id, bounds.clamp(projection.worldPoint(n.position).snapped()))
+                onMove?(d.id, roomBounds.clamp(projection.worldPoint(n.position).snapped()))
             }
             dragging = nil
         case .chooseDropSpot:
             let w = projection.worldPoint(loc)
-            if bounds.contains(w) { onTapFloor?(w.snapped()) }
+            if roomBounds.contains(w) { onTapFloor?(w.snapped()) }
         case .look:
             if let g = hit(loc, prefix: "gift:") { onTapGift?(g); return }
             if let s = hit(loc, prefix: "stayer:") { onTapStayer?(s) }
