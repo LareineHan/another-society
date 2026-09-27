@@ -16,10 +16,12 @@ final class AppModel {
     private(set) var pendingGiftCount = 0
     var banner: String?
 
-    private let tokenStore = KeychainTokenStore()
+    private let tokenStore: TokenStore
 
-    init() {
-        api = APIClient(baseURL: AppConfig.apiBaseURL, tokenStore: tokenStore)
+    /// Tests inject an in-memory store so several residents can be signed in side by side.
+    init(tokenStore: TokenStore = KeychainTokenStore(), baseURL: URL = AppConfig.apiBaseURL) {
+        self.tokenStore = tokenStore
+        api = APIClient(baseURL: baseURL, tokenStore: tokenStore)
     }
 
     var resident: Resident? { me?.resident }

@@ -17,7 +17,8 @@
     "contract:gen": "openapi-typescript packages/api-contract/openapi.yaml -o packages/api-contract/src/generated.ts",
     "contract:check": "pnpm contract:gen && git diff --exit-code packages/api-contract/src/generated.ts",
     "reconcile": "tsx services/jobs/src/cli.ts reconcile",
-    "ci": "pnpm typecheck && pnpm contract:lint && pnpm world:validate && pnpm test"
+    "ci": "pnpm typecheck && pnpm contract:lint && pnpm world:validate && pnpm test",
+    "dev:server": "tsx scripts/dev-server.mts"
   },
   "devDependencies": {
     "@apidevtools/swagger-parser": "^13.1.0",
@@ -28,6 +29,7 @@
     "@as/world-api": "workspace:^",
     "@as/world-template": "workspace:^",
     "@cloudflare/workers-types": "^5.20260927.1",
+    "@hono/node-server": "^2.1.1",
     "@types/node": "^22",
     "@types/pg": "^8.23.1",
     "ajv": "^8.17.1",

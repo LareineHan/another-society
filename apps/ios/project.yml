@@ -55,12 +55,28 @@ targets:
           AS_API_BASE_URL: http://127.0.0.1:8787
         Release:
           AS_API_BASE_URL: https://api.anothersociety.example # DEV_PLACEHOLDER: production API host
+  AnotherSocietyTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: AnotherSocietyTests
+    dependencies:
+      - target: AnotherSociety
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.implemon.anothersociety.tests
 schemes:
   AnotherSociety:
     build:
       targets:
         AnotherSociety: all
+        AnotherSocietyTests: [test]
     run:
       config: Debug
+    test:
+      config: Debug
+      targets:
+        - AnotherSocietyTests
     archive:
       config: Release

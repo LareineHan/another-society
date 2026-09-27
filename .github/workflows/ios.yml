@@ -3,7 +3,7 @@ name: ios
 on:
   push:
     branches: [main]
-    paths: ["apps/ios/**", ".github/workflows/ios.yml", "scripts/xcode-annotate.py"]
+    paths: ["apps/ios/**", ".github/workflows/ios.yml", "scripts/xcode-annotate.py", "scripts/dev-server.mts", "services/world-api/**", "packages/**"]
   pull_request:
     paths: ["apps/ios/**"]
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
         run: |
           xcodebuild -version
           swift --version
-          brew install xcodegen
+          brew install xcodegen postgresql@16
       - name: ASKit unit tests (models vs real API fixtures, routing, geometry, client)
         run: |
           set -o pipefail
@@ -32,3 +32,29 @@ jobs:
           xcodebuild -project apps/ios/AnotherSociety.xcodeproj -scheme AnotherSociety \
             -destination 'generic/platform=iOS Simulator' -configuration Debug \
             CODE_SIGNING_ALLOWED=NO build 2>&1 | python3 scripts/xcode-annotate.py
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Start the real API locally (Postgres + Node dev server, DEV_AUTH)
+        run: |
+          PG=$(brew --prefix postgresql@16)/bin
+          $PG/initdb -D "$RUNNER_TEMP/pg" -U postgres --auth=trust -E UTF8 > /dev/null
+          $PG/pg_ctl -D "$RUNNER_TEMP/pg" -o "-p 5432 -c max_connections=200" -l "$RUNNER_TEMP/pg.log" start
+          $PG/createdb -h 127.0.0.1 -U postgres as_ios
+          pnpm install --frozen-lockfile
+          export DATABASE_URL=postgres://postgres@127.0.0.1:5432/as_ios
+          pnpm db:migrate && pnpm db:seed && pnpm world:import > /dev/null
+          nohup pnpm dev:server > "$RUNNER_TEMP/api.log" 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8787/health && break; sleep 1; done
+      - name: App integration tests on the iOS Simulator (app models vs real API)
+        run: |
+          set -o pipefail
+          UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k in sorted(d, reverse=True) if 'iOS' in k for x in d[k] if x['name'].startswith('iPhone')))")
+          echo "simulator $UDID"
+          xcodebuild -project apps/ios/AnotherSociety.xcodeproj -scheme AnotherSociety \
+            -destination "id=$UDID" -configuration Debug CODE_SIGNING_ALLOWED=NO test 2>&1 | python3 scripts/xcode-annotate.py
+      - name: API log on failure
+        if: failure()
+        run: tail -100 "$RUNNER_TEMP/api.log" || true
