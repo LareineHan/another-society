@@ -12,9 +12,19 @@ struct WorldView: View {
     @State private var city = CityModel()
     @State private var path: [WorldRoute] = []
     @State private var sheet: Sheet?
-    @State private var wanderResults: [WanderItem] = []
-
-    enum Sheet: String, Identifiable { case bag, gifts, settings, wander; var id: String { rawValue } }
+    /// Sheet payloads travel inside the item: a separate @State read only inside the sheet closure
+    /// is captured stale on first presentation (SwiftUI does not track it as a body dependency).
+    enum Sheet: Identifiable {
+        case bag, gifts, settings, wander([WanderItem])
+        var id: String {
+            switch self {
+            case .bag: return "bag"
+            case .gifts: return "gifts"
+            case .settings: return "settings"
+            case .wander: return "wander"
+            }
+        }
+    }
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -33,7 +43,7 @@ struct WorldView: View {
             case .bag: BagView().presentationDetents([.medium, .large])
             case .gifts: GiftInboxView().presentationDetents([.medium, .large])
             case .settings: SettingsView()
-            case .wander: WanderSheet(results: wanderResults) { item in
+            case .wander(let results): WanderSheet(results: results) { item in
                 sheet = nil
                 city.remember(propertyId: item.id, plotId: item.plotId)
                 travel(to: item.id, center: item.center, frontage: item.frontageNodeId)
@@ -113,8 +123,7 @@ struct WorldView: View {
         guard let c = app.city else { return }
         let near = city.miniPosition(app)
         if let items = await app.attempt({ try await app.api.wander(cityId: c.id, near: near, limit: 5) }) {
-            wanderResults = items
-            sheet = .wander
+            sheet = .wander(items)
         }
     }
 }

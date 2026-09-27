@@ -25,7 +25,7 @@ services/
   world-api/              resident API Worker (Hono) + admin Worker (Cloudflare Access)
   jobs/                   outbox publisher, queue consumer, crons (deletion, retention, reconciliation)
 tests/                    acceptance tests against real Postgres; every response is checked against OpenAPI
-apps/ios/                 SwiftUI + SpriteKit client (next)
+apps/ios/                 SwiftUI + SpriteKit client, ASKit core package (see apps/ios/README.md)
 ```
 
 ## Run locally
@@ -46,6 +46,8 @@ cd services/world-api && npx wrangler dev
 # in another shell: end-to-end smoke of the core loop
 node scripts/workerd-smoke.mjs http://127.0.0.1:8787
 ```
+
+Or without wrangler: `pnpm dev:server` serves the same app from Node on :8787.
 
 `DEV_AUTH=true` (local only) accepts identity tokens of the form `dev:<anything>` so you can sign in
 without Apple. The Worker refuses to start with `DEV_AUTH` in production.

@@ -1,6 +1,6 @@
 # Implementation status
 
-Last updated with the backend foundation (Milestones 0 to 6, server side).
+Backend foundation (Milestones 0 to 6, server side) and the first iOS client.
 
 ## Built and tested
 
@@ -29,8 +29,25 @@ The API bundle also runs end to end inside real `workerd` via `wrangler dev` aga
 - Soft-language visit thresholds, display-name screening list (needs a real multilingual list)
 - Currency display name, city name (`Founding City DEV`), bundle ID `com.implemon.anothersociety`
 
+## iOS client (apps/ios)
+
+| Area | Built | Evidence |
+|------|-------|----------|
+| Core (ASKit) | Codable models for every endpoint, API client (single-flight refresh, idempotent retries), fixed-point geometry + 3/4 projection, road-graph A*, bundled asset manifest | 15 `swift test` cases in CI, decoding real captured API responses |
+| Sign in | Sign in with Apple with nonce, Keychain session; Debug dev sign-in | `AppFlowTests` |
+| Onboarding | Name, Mini from approved parts, choose the exact plot on the map (10 min hold), cottage variant, atomic claim | `AppFlowTests`, screenshots |
+| City | Pan/zoom 3/4 map, roads, homes, forest on undeveloped land, stay glow, tap-to-travel along A* route, Wander | screenshots |
+| Home | Dollhouse room, owner Arrange (drag, turn, add, put away), revision-safe Save that keeps the draft on 409, Door settings, Guests with Send Home, pending gifts | `AppFlowTests` (incl. stale-save conflict), screenshots |
+| Visiting | Anonymous visit + dwell qualification, Stay/Leave, Leave a gift at a chosen spot, report, block | `AppFlowTests` |
+| Other | Bag (inventory + general store), gift inbox, settings, account deletion | screenshots |
+
+CI (`.github/workflows/ios.yml`, macOS): XcodeGen, unsigned Simulator build, ASKit tests, app
+integration tests against the real API (Postgres + Node dev server on the runner), and a UI screenshot
+tour published to the `ci-screenshots` branch.
+
 ## Next
 
-1. iOS client (SwiftUI shell + SpriteKit city/property scenes) against this API.
-2. Provision staging (Neon + Hyperdrive + Queues + secrets) and run the smoke script there.
-3. Load test shapes from Blueprint §74 before public beta.
+1. Run it in Xcode on your Mac with your signing team; try two Simulators with two dev names.
+2. Provision staging (Neon + Hyperdrive + Queues + secrets) and point a device build at it.
+3. Art: replace `PlaceholderArt.swift` / `MiniLook.swift` with the illustrated sprite packs.
+4. Load test shapes from Blueprint §74 before public beta.
