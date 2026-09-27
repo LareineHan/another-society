@@ -41,13 +41,17 @@ export interface TestWorld {
 let counter = 0;
 export const key = (label = 'k') => `${label}-${Date.now().toString(36)}-${(counter++).toString(36)}-${Math.random().toString(36).slice(2, 10)}`.padEnd(16, 'x');
 
+/**
+ * poolSize is a request; TEST_POOL_MAX caps it so parallel files fit the server's max_connections
+ * (default Postgres allows 100). Race tests still contend: requests queue for connections and interleave.
+ */
 export async function setupTestWorld(opts: { poolSize?: number } = {}): Promise<TestWorld> {
   const dbName = `as_test_${process.pid}_${Math.random().toString(36).slice(2, 8)}`;
   const admin = new pg.Client({ connectionString: `${PG_BASE}/postgres` });
   await admin.connect();
   await admin.query(`CREATE DATABASE ${dbName} TEMPLATE as_test_template`);
   await admin.end();
-  const pool = new pg.Pool({ connectionString: `${PG_BASE}/${dbName}`, max: opts.poolSize ?? 20 });
+  const pool = new pg.Pool({ connectionString: `${PG_BASE}/${dbName}`, max: Math.min(opts.poolSize ?? 20, Number(process.env.TEST_POOL_MAX ?? 20)) });
   pool.on('error', () => {}); // idle clients are terminated when the test DB is dropped
   const db = createDb(pool);
   const logs: Record<string, unknown>[] = [];

@@ -18,7 +18,13 @@ jobs:
           --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
     env:
       TEST_PG_URL: postgres://postgres:postgres@localhost:5432
+      TEST_POOL_MAX: "60"
     steps:
+      - name: Raise Postgres max_connections for parallel race tests
+        run: |
+          docker exec ${{ job.services.postgres.id }} psql -U postgres -c "ALTER SYSTEM SET max_connections = 300"
+          docker restart ${{ job.services.postgres.id }}
+          for i in $(seq 1 30); do docker exec ${{ job.services.postgres.id }} pg_isready -U postgres && break; sleep 1; done
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
